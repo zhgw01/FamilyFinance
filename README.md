@@ -1,4 +1,5 @@
-FamilyFinance
+家庭理财
 =============
 
-IOS App to manage family cash flow
+* 记录家庭收支流水
+* 收集最有利理财产品
