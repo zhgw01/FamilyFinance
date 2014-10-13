@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1105956619EC08EF00FF65EC /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1105956419EC08EF00FF65EC /* AccountController.swift */; };
+		1105956719EC08EF00FF65EC /* FinanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1105956519EC08EF00FF65EC /* FinanceController.swift */; };
 		11C4C56219E57B1100AE4243 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C4C56119E57B1100AE4243 /* AppDelegate.swift */; };
-		11C4C56419E57B1100AE4243 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C4C56319E57B1100AE4243 /* FirstViewController.swift */; };
-		11C4C56619E57B1100AE4243 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C4C56519E57B1100AE4243 /* SecondViewController.swift */; };
 		11C4C56919E57B1100AE4243 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C4C56719E57B1100AE4243 /* Main.storyboard */; };
 		11C4C56B19E57B1100AE4243 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11C4C56A19E57B1100AE4243 /* Images.xcassets */; };
 		11C4C56E19E57B1200AE4243 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C4C56C19E57B1200AE4243 /* LaunchScreen.xib */; };
@@ -27,11 +27,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1105956419EC08EF00FF65EC /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountController.swift; path = controllers/AccountController.swift; sourceTree = "<group>"; };
+		1105956519EC08EF00FF65EC /* FinanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FinanceController.swift; path = controllers/FinanceController.swift; sourceTree = "<group>"; };
 		11C4C55C19E57B1100AE4243 /* FamilyFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FamilyFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11C4C56019E57B1100AE4243 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11C4C56119E57B1100AE4243 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		11C4C56319E57B1100AE4243 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		11C4C56519E57B1100AE4243 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		11C4C56819E57B1100AE4243 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11C4C56A19E57B1100AE4243 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		11C4C56D19E57B1200AE4243 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -58,6 +58,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1105956319EC062D00FF65EC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1105956419EC08EF00FF65EC /* AccountController.swift */,
+				1105956519EC08EF00FF65EC /* FinanceController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		1105956819EC093E00FF65EC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1105956919EC095000FF65EC /* Business */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Business;
+			sourceTree = "<group>";
+		};
 		11C4C55319E57B1100AE4243 = {
 			isa = PBXGroup;
 			children = (
@@ -79,9 +102,10 @@
 		11C4C55E19E57B1100AE4243 /* FamilyFinance */ = {
 			isa = PBXGroup;
 			children = (
+				1105956919EC095000FF65EC /* Business */,
+				1105956819EC093E00FF65EC /* Model */,
+				1105956319EC062D00FF65EC /* Controllers */,
 				11C4C56119E57B1100AE4243 /* AppDelegate.swift */,
-				11C4C56319E57B1100AE4243 /* FirstViewController.swift */,
-				11C4C56519E57B1100AE4243 /* SecondViewController.swift */,
 				11C4C56719E57B1100AE4243 /* Main.storyboard */,
 				11C4C56A19E57B1100AE4243 /* Images.xcassets */,
 				11C4C56C19E57B1200AE4243 /* LaunchScreen.xib */,
@@ -215,9 +239,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11C4C56619E57B1100AE4243 /* SecondViewController.swift in Sources */,
 				11C4C56219E57B1100AE4243 /* AppDelegate.swift in Sources */,
-				11C4C56419E57B1100AE4243 /* FirstViewController.swift in Sources */,
+				1105956719EC08EF00FF65EC /* FinanceController.swift in Sources */,
+				1105956619EC08EF00FF65EC /* AccountController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +433,7 @@
 				11C4C57F19E57B1200AE4243 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		11C4C58019E57B1200AE4243 /* Build configuration list for PBXNativeTarget "FamilyFinanceTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +442,7 @@
 				11C4C58219E57B1200AE4243 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
