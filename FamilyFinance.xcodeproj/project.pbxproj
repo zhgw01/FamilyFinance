@@ -81,6 +81,13 @@
 			name = Business;
 			sourceTree = "<group>";
 		};
+		119C480319ED581C00374F6F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		11C4C55319E57B1100AE4243 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +109,7 @@
 		11C4C55E19E57B1100AE4243 /* FamilyFinance */ = {
 			isa = PBXGroup;
 			children = (
+				119C480319ED581C00374F6F /* View */,
 				1105956919EC095000FF65EC /* Business */,
 				1105956819EC093E00FF65EC /* Model */,
 				1105956319EC062D00FF65EC /* Controllers */,
