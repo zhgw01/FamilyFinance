@@ -12,6 +12,14 @@ class AccountController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let circleFrame = CGRect(x: 20, y: 20, width: 100, height: 100)
+        let circleButton = CircleButton(frame: circleFrame)
+        circleButton.strokeColorGradientStart = PNGreen
+        self.view.addSubview(circleButton)
+        
+        circleButton.growChartByAmount(amount: 30)
+        circleButton.strokeChart()
     }
 
     override func didReceiveMemoryWarning() {
