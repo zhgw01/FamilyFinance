@@ -23,7 +23,7 @@ class CircleButton: UIButton {
     var strokeColorGradientStart: UIColor?
     var total: NSNumber
     var current: NSNumber
-    var lineWith: NSNumber = 8.0
+    var lineWidth: NSNumber = 8.0
     var duration: NSTimeInterval = 1.0
     var chartType: ChartType = .Percent
     
@@ -49,13 +49,13 @@ class CircleButton: UIButton {
         
         self.circle.path = circlePath.CGPath;
         self.circle.lineCap = kCALineCapRound
-        self.circle.lineWidth = CGFloat(self.lineWith.floatValue)
+        self.circle.lineWidth = CGFloat(self.lineWidth.floatValue)
         self.circle.fillColor = UIColor.clearColor().CGColor
         self.circle.zPosition = 1
         
         self.circleBG.path = circlePath.CGPath
         self.circleBG.lineCap = kCALineCapRound
-        self.circleBG.lineWidth = CGFloat(self.lineWith.floatValue)
+        self.circleBG.lineWidth = CGFloat(self.lineWidth.floatValue)
         self.circleBG.fillColor = UIColor.clearColor().CGColor
         self.circleBG.strokeColor = shadow ? PNLightYellow.CGColor : UIColor.clearColor().CGColor
         self.circleBG.strokeEnd = 1.0
@@ -77,9 +77,37 @@ class CircleButton: UIButton {
     }
 
     required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        countingLabel            = aDecoder.decodeObjectForKey("countingLabel") as UILabel
+        strokeColor              = aDecoder.decodeObjectForKey("strokeColor") as UIColor
+        strokeColorGradientStart = aDecoder.decodeObjectForKey("strokeColorGradientStart") as UIColor?
+        total                    = aDecoder.decodeObjectForKey("total") as NSNumber
+        current                  = aDecoder.decodeObjectForKey("current") as NSNumber
+        lineWidth                = aDecoder.decodeObjectForKey("lineWidth") as NSNumber
+        duration                 = aDecoder.decodeObjectForKey("duration") as NSTimeInterval
+        circle                   = aDecoder.decodeObjectForKey("circle") as CAShapeLayer
+        circleBG                 = aDecoder.decodeObjectForKey("circleBG") as CAShapeLayer
+        
+        super.init(coder: aDecoder)
+        
+        self.layer.addSublayer(circle)
+        self.layer.addSublayer(circleBG)
+        
+        self.addSubview(countingLabel)
     }
     
+    override func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(countingLabel, forKey: "countingLabel")
+        aCoder.encodeObject(strokeColor, forKey: "strokeColor")
+        aCoder.encodeObject(strokeColorGradientStart!, forKey: "strokeColorGradientStart")
+        aCoder.encodeObject(total, forKey: "total")
+        aCoder.encodeObject(current, forKey: "current")
+        aCoder.encodeObject(lineWidth, forKey: "lineWidth")
+        aCoder.encodeObject(duration, forKey: "duration")
+        aCoder.encodeObject(circle, forKey: "circle")
+        aCoder.encodeObject(circleBG, forKey: "circleBG")
+        
+        super.encodeWithCoder(aCoder)
+    }
 
     func degree2radian(angle: Double) -> CGFloat{
         return CGFloat(angle * M_PI / 180)
