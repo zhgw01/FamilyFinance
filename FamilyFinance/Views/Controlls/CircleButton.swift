@@ -17,29 +17,41 @@ class CircleButton: UIButton {
         case None
     }
     
-    var countingLabel: UILabel
+    let countingLabel: UILabel = UILabel()
     
     var strokeColor: UIColor = PNFreshGreen
     var strokeColorGradientStart: UIColor?
-    var total: NSNumber
-    var current: NSNumber
+    var total: NSNumber = 100
+    var current: NSNumber = 0
     var lineWith: NSNumber = 8.0
     var duration: NSTimeInterval = 1.0
     var chartType: ChartType = .Percent
     
-    var circle: CAShapeLayer
-    var circleBG: CAShapeLayer
+    let circle: CAShapeLayer = CAShapeLayer()
+    let circleBG: CAShapeLayer = CAShapeLayer()
+    var clockwise: Bool = false
+    var shadow: Bool = false
     
- 
+    override var frame: CGRect {
+        didSet {
+            updateFrame()
+        }
+    }
     
-    init(frame: CGRect, total: NSNumber, current: NSNumber, clockwise: Bool, shadow: Bool) {
-        let labelFrame = CGRect(x: 0.0, y: 0.0, width: 100.0, height: 50.0)
-        self.countingLabel = UILabel(frame: labelFrame)
-        self.total = total
-        self.current = current
-        self.circle = CAShapeLayer()
-        self.circleBG = CAShapeLayer()
+    override init(frame: CGRect) {
         super.init(frame: frame)
+        setupComponents()
+        updateFrame()
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    func updateFrame() {
+        countingLabel.frame = CGRect(x: 0.0, y: 0.0, width: 100.0, height: 50.0)
+        countingLabel.center = self.center
+        
         
         let startAngle: CGFloat = clockwise ? -90.0 : 270.0
         let endAngle: CGFloat  = clockwise ? -90.01 : 270.1
@@ -47,13 +59,16 @@ class CircleButton: UIButton {
         let radius: CGFloat     = self.frame.size.height / 2.0
         let circlePath = UIBezierPath(arcCenter: arcCenter, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: clockwise)
         
-        self.circle.path = circlePath.CGPath;
+        circle.path = circlePath.CGPath
+        circleBG.path = circlePath.CGPath
+    }
+    
+    func setupComponents() {
         self.circle.lineCap = kCALineCapRound
         self.circle.lineWidth = CGFloat(self.lineWith.floatValue)
         self.circle.fillColor = UIColor.clearColor().CGColor
         self.circle.zPosition = 1
         
-        self.circleBG.path = circlePath.CGPath
         self.circleBG.lineCap = kCALineCapRound
         self.circleBG.lineWidth = CGFloat(self.lineWith.floatValue)
         self.circleBG.fillColor = UIColor.clearColor().CGColor
@@ -70,16 +85,8 @@ class CircleButton: UIButton {
         self.countingLabel.backgroundColor = UIColor.clearColor()
         self.countingLabel.center = self.center
         self.addSubview(self.countingLabel)
-    }
-    
-    override convenience init(frame: CGRect) {
-        self.init(frame: frame, total: 100.0, current: 0.0, clockwise: true, shadow: true)
-    }
 
-    required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
-    
 
     func degree2radian(angle: Double) -> CGFloat{
         return CGFloat(angle * M_PI / 180)
