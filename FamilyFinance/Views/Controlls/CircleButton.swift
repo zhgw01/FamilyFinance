@@ -23,7 +23,7 @@ class CircleButton: UIButton {
     var strokeColorGradientStart: UIColor?
     var total: NSNumber = 100
     var current: NSNumber = 0
-    var lineWith: NSNumber = 8.0
+    var lineWidth: NSNumber = 8.0
     var duration: NSTimeInterval = 1.0
     var chartType: ChartType = .Percent
     
@@ -46,31 +46,45 @@ class CircleButton: UIButton {
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        setupComponents()
+        updateFrame()
     }
     
     func updateFrame() {
         countingLabel.frame = CGRect(x: 0.0, y: 0.0, width: 100.0, height: 50.0)
-        countingLabel.center = self.center
-        
+        countingLabel.center = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
         
         let startAngle: CGFloat = clockwise ? -90.0 : 270.0
         let endAngle: CGFloat  = clockwise ? -90.01 : 270.1
-        let arcCenter  = CGPoint(x: self.center.x, y: self.center.y)
-        let radius: CGFloat     = self.frame.size.height / 2.0
+        let arcCenter  = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
+        let radius: CGFloat     = self.bounds.size.height / 2.0
         let circlePath = UIBezierPath(arcCenter: arcCenter, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: clockwise)
+        
         
         circle.path = circlePath.CGPath
         circleBG.path = circlePath.CGPath
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        updateFrame()
+    }
+    
+    override func layoutSublayersOfLayer(layer: CALayer!) {
+        super.layoutSublayersOfLayer(layer)
+        updateFrame()
+    }
+    
     func setupComponents() {
+        
         self.circle.lineCap = kCALineCapRound
-        self.circle.lineWidth = CGFloat(self.lineWith.floatValue)
+        self.circle.lineWidth = CGFloat(self.lineWidth.floatValue)
         self.circle.fillColor = UIColor.clearColor().CGColor
+        self.circle.strokeColor = strokeColor.CGColor
         self.circle.zPosition = 1
         
         self.circleBG.lineCap = kCALineCapRound
-        self.circleBG.lineWidth = CGFloat(self.lineWith.floatValue)
+        self.circleBG.lineWidth = CGFloat(self.lineWidth.floatValue)
         self.circleBG.fillColor = UIColor.clearColor().CGColor
         self.circleBG.strokeColor = shadow ? PNLightYellow.CGColor : UIColor.clearColor().CGColor
         self.circleBG.strokeEnd = 1.0

@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		1105956619EC08EF00FF65EC /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1105956419EC08EF00FF65EC /* AccountController.swift */; };
 		1105956719EC08EF00FF65EC /* FinanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1105956519EC08EF00FF65EC /* FinanceController.swift */; };
-		119A803519F3DB6600CFFD82 /* MonthlyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 119A803419F3DB6600CFFD82 /* MonthlyView.xib */; };
-		119A803719F3DC3200CFFD82 /* MonthlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119A803619F3DC3200CFFD82 /* MonthlyView.swift */; };
 		11B979051A0DEEEE00E3299F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B979041A0DEEEE00E3299F /* QuartzCore.framework */; };
 		11C4C56219E57B1100AE4243 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C4C56119E57B1100AE4243 /* AppDelegate.swift */; };
 		11C4C56919E57B1100AE4243 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C4C56719E57B1100AE4243 /* Main.storyboard */; };
@@ -36,8 +34,6 @@
 		1105956419EC08EF00FF65EC /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountController.swift; path = controllers/AccountController.swift; sourceTree = "<group>"; };
 		1105956519EC08EF00FF65EC /* FinanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FinanceController.swift; path = controllers/FinanceController.swift; sourceTree = "<group>"; };
 		1134662B1A10DB2F00844C3F /* FamilyFinance-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FamilyFinance-Bridging-Header.h"; sourceTree = "<group>"; };
-		119A803419F3DB6600CFFD82 /* MonthlyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MonthlyView.xib; path = Views/MonthlyView.xib; sourceTree = "<group>"; };
-		119A803619F3DC3200CFFD82 /* MonthlyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MonthlyView.swift; path = Views/MonthlyView.swift; sourceTree = "<group>"; };
 		11B979041A0DEEEE00E3299F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		11C4C55C19E57B1100AE4243 /* FamilyFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FamilyFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11C4C56019E57B1100AE4243 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,8 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				11E7A0F11A0BA934000BD5A0 /* Controlls */,
-				119A803419F3DB6600CFFD82 /* MonthlyView.xib */,
-				119A803619F3DC3200CFFD82 /* MonthlyView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -281,7 +275,6 @@
 			files = (
 				11C4C56919E57B1100AE4243 /* Main.storyboard in Resources */,
 				11C4C56E19E57B1200AE4243 /* LaunchScreen.xib in Resources */,
-				119A803519F3DB6600CFFD82 /* MonthlyView.xib in Resources */,
 				11C4C56B19E57B1100AE4243 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,7 +329,6 @@
 				11E7A0F31A0BA97A000BD5A0 /* CircleButton.swift in Sources */,
 				11C4C56219E57B1100AE4243 /* AppDelegate.swift in Sources */,
 				1105956719EC08EF00FF65EC /* FinanceController.swift in Sources */,
-				119A803719F3DC3200CFFD82 /* MonthlyView.swift in Sources */,
 				1105956619EC08EF00FF65EC /* AccountController.swift in Sources */,
 				11E7A0F51A0BB103000BD5A0 /* Color.swift in Sources */,
 			);

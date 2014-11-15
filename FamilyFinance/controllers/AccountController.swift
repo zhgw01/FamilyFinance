@@ -10,21 +10,19 @@ import UIKit
 
 class AccountController: UIViewController {
 
+    @IBOutlet weak var circleChart: CircleButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let circleFrame = CGRect(x: 20, y: 20, width: 100, height: 100)
-        let circleButton = CircleButton(frame: circleFrame)
-        circleButton.strokeColorGradientStart = PNGreen
-        self.view.addSubview(circleButton)
-        
-        circleButton.growChartByAmount(amount: 30)
-        circleButton.strokeChart()
+        circleChart.current = 30
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        circleChart.strokeChart()
     }
+  
 
 
 }
