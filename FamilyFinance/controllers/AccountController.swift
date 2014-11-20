@@ -15,12 +15,12 @@ class AccountController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        circleChart.current = 30
+       // circleChart.current = 30
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        circleChart.strokeChart()
+       // circleChart.strokeChart()
     }
   
 
