@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -15,41 +16,52 @@
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="003-i8-B4S">
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="eMk-Ry-Vvh" customClass="CircleChart" customModule="ChartKit">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" red="0.1369173202672116" green="1" blue="0.51694629474402443" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="003-i8-B4S" secondAttribute="height" multiplier="1:1" id="hcR-N7-OI9"/>
+                                    <constraint firstAttribute="width" constant="100" id="6QX-xs-4WK"/>
+                                    <constraint firstAttribute="width" secondItem="eMk-Ry-Vvh" secondAttribute="height" multiplier="1:1" id="Bxa-Dd-5Dg"/>
                                 </constraints>
-                                <variation key="heightClass=regular-widthClass=regular"/>
-                            </view>
-                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="YFt-HM-WU5">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" red="0.74742896520168811" green="0.38893210586592619" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="YFt-HM-WU5" secondAttribute="height" multiplier="1:1" id="HVJ-IY-Vgy"/>
-                                </constraints>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="25" y="20" width="100" height="100"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="percent">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                        <color key="value" red="0.51835569591333175" green="0.51482669842635254" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Bxa-Dd-5Dg"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="6QX-xs-4WK"/>
+                                        <include reference="Bxa-Dd-5Dg"/>
+                                    </mask>
                                 </variation>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="003-i8-B4S" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="AWC-mk-THB"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="003-i8-B4S" secondAttribute="trailing" constant="20" id="EYt-dk-nTy"/>
-                            <constraint firstItem="YFt-HM-WU5" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="10" id="Gr7-dr-454"/>
-                            <constraint firstItem="YFt-HM-WU5" firstAttribute="bottom" secondItem="003-i8-B4S" secondAttribute="bottom" id="O2X-Ak-3wy"/>
-                            <constraint firstItem="YFt-HM-WU5" firstAttribute="width" secondItem="003-i8-B4S" secondAttribute="width" id="spB-nN-ce6"/>
+                            <constraint firstItem="eMk-Ry-Vvh" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="8" id="7Gn-eg-o4j"/>
+                            <constraint firstItem="eMk-Ry-Vvh" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="110" id="ddu-Wz-fsu"/>
                         </constraints>
                         <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="eMk-Ry-Vvh"/>
+                            </mask>
                             <mask key="constraints">
-                                <include reference="Gr7-dr-454"/>
-                                <include reference="spB-nN-ce6"/>
-                                <include reference="EYt-dk-nTy"/>
+                                <include reference="7Gn-eg-o4j"/>
+                                <include reference="ddu-Wz-fsu"/>
                             </mask>
                         </variation>
                     </view>
@@ -70,11 +82,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="理财" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="264" y="279" width="72" height="41.5"/>
+                                <rect key="frame" x="151" y="312" width="72" height="41.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>

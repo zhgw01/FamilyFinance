@@ -18,6 +18,13 @@
 		11E7A0F31A0BA97A000BD5A0 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E7A0F21A0BA97A000BD5A0 /* CircleButton.swift */; };
 		11E7A0F51A0BB103000BD5A0 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E7A0F41A0BB103000BD5A0 /* Color.swift */; };
 		808438D82402DD231E1FB6DD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 501D06C7B6F7CD7BD3A2C33E /* libPods.a */; };
+		9B103EC31A2215C8000A56CF /* UIColor+Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B103EC21A2215C8000A56CF /* UIColor+Chart.swift */; };
+		9BBBD1231A22116400492C23 /* ChartKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BBBD1221A22116400492C23 /* ChartKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9BBBD1291A22116400492C23 /* ChartKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBBD11E1A22116400492C23 /* ChartKit.framework */; };
+		9BBBD1321A22116400492C23 /* ChartKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBBD1311A22116400492C23 /* ChartKitTests.swift */; };
+		9BBBD1351A22116400492C23 /* ChartKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBBD11E1A22116400492C23 /* ChartKit.framework */; };
+		9BBBD1361A22116400492C23 /* ChartKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBBD11E1A22116400492C23 /* ChartKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9BBBD13F1A22120D00492C23 /* CircleChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBBD13E1A22120D00492C23 /* CircleChart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +35,42 @@
 			remoteGlobalIDString = 11C4C55B19E57B1100AE4243;
 			remoteInfo = FamilyFinance;
 		};
+		9BBBD12A1A22116400492C23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11C4C55419E57B1100AE4243 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9BBBD11D1A22116400492C23;
+			remoteInfo = ChartKit;
+		};
+		9BBBD12C1A22116400492C23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11C4C55419E57B1100AE4243 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11C4C55B19E57B1100AE4243;
+			remoteInfo = FamilyFinance;
+		};
+		9BBBD1331A22116400492C23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11C4C55419E57B1100AE4243 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9BBBD11D1A22116400492C23;
+			remoteInfo = ChartKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9BBBD13A1A22116400492C23 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9BBBD1361A22116400492C23 /* ChartKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1105956419EC08EF00FF65EC /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountController.swift; path = controllers/AccountController.swift; sourceTree = "<group>"; };
@@ -48,6 +90,14 @@
 		11E7A0F41A0BB103000BD5A0 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color.swift; path = Views/Controlls/Color.swift; sourceTree = "<group>"; };
 		501D06C7B6F7CD7BD3A2C33E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C7116BA96CFBB8A8ACFA07 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		9B103EC21A2215C8000A56CF /* UIColor+Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Chart.swift"; sourceTree = "<group>"; };
+		9BBBD11E1A22116400492C23 /* ChartKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChartKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BBBD1211A22116400492C23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BBBD1221A22116400492C23 /* ChartKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChartKit.h; sourceTree = "<group>"; };
+		9BBBD1281A22116400492C23 /* ChartKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChartKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BBBD1301A22116400492C23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BBBD1311A22116400492C23 /* ChartKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartKitTests.swift; sourceTree = "<group>"; };
+		9BBBD13E1A22120D00492C23 /* CircleChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleChart.swift; sourceTree = "<group>"; };
 		D073662589B0D943E9E28E4F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,6 +108,7 @@
 			files = (
 				11B979051A0DEEEE00E3299F /* QuartzCore.framework in Frameworks */,
 				808438D82402DD231E1FB6DD /* libPods.a in Frameworks */,
+				9BBBD1351A22116400492C23 /* ChartKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +116,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BBBD11A1A22116400492C23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BBBD1251A22116400492C23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BBBD1291A22116400492C23 /* ChartKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +173,8 @@
 			children = (
 				11C4C55E19E57B1100AE4243 /* FamilyFinance */,
 				11C4C57619E57B1200AE4243 /* FamilyFinanceTests */,
+				9BBBD11F1A22116400492C23 /* ChartKit */,
+				9BBBD12E1A22116400492C23 /* ChartKitTests */,
 				11C4C55D19E57B1100AE4243 /* Products */,
 				FAC4F4A12B005727FF0F87C6 /* Pods */,
 				1D24E31166FAD4559954F331 /* Frameworks */,
@@ -118,6 +186,8 @@
 			children = (
 				11C4C55C19E57B1100AE4243 /* FamilyFinance.app */,
 				11C4C57319E57B1200AE4243 /* FamilyFinanceTests.xctest */,
+				9BBBD11E1A22116400492C23 /* ChartKit.framework */,
+				9BBBD1281A22116400492C23 /* ChartKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -182,6 +252,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9BBBD11F1A22116400492C23 /* ChartKit */ = {
+			isa = PBXGroup;
+			children = (
+				9BBBD1221A22116400492C23 /* ChartKit.h */,
+				9BBBD1201A22116400492C23 /* Supporting Files */,
+				9BBBD13E1A22120D00492C23 /* CircleChart.swift */,
+				9B103EC21A2215C8000A56CF /* UIColor+Chart.swift */,
+			);
+			path = ChartKit;
+			sourceTree = "<group>";
+		};
+		9BBBD1201A22116400492C23 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9BBBD1211A22116400492C23 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9BBBD12E1A22116400492C23 /* ChartKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				9BBBD1311A22116400492C23 /* ChartKitTests.swift */,
+				9BBBD12F1A22116400492C23 /* Supporting Files */,
+			);
+			path = ChartKitTests;
+			sourceTree = "<group>";
+		};
+		9BBBD12F1A22116400492C23 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9BBBD1301A22116400492C23 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		FAC4F4A12B005727FF0F87C6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +299,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		9BBBD11B1A22116400492C23 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BBBD1231A22116400492C23 /* ChartKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		11C4C55B19E57B1100AE4243 /* FamilyFinance */ = {
 			isa = PBXNativeTarget;
@@ -203,10 +320,12 @@
 				11C4C55919E57B1100AE4243 /* Frameworks */,
 				11C4C55A19E57B1100AE4243 /* Resources */,
 				B47901B65A0C7EABD68836E6 /* Copy Pods Resources */,
+				9BBBD13A1A22116400492C23 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9BBBD1341A22116400492C23 /* PBXTargetDependency */,
 			);
 			name = FamilyFinance;
 			productName = FamilyFinance;
@@ -231,6 +350,43 @@
 			productReference = 11C4C57319E57B1200AE4243 /* FamilyFinanceTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		9BBBD11D1A22116400492C23 /* ChartKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BBBD1371A22116400492C23 /* Build configuration list for PBXNativeTarget "ChartKit" */;
+			buildPhases = (
+				9BBBD1191A22116400492C23 /* Sources */,
+				9BBBD11A1A22116400492C23 /* Frameworks */,
+				9BBBD11B1A22116400492C23 /* Headers */,
+				9BBBD11C1A22116400492C23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChartKit;
+			productName = ChartKit;
+			productReference = 9BBBD11E1A22116400492C23 /* ChartKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9BBBD1271A22116400492C23 /* ChartKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BBBD13B1A22116400492C23 /* Build configuration list for PBXNativeTarget "ChartKitTests" */;
+			buildPhases = (
+				9BBBD1241A22116400492C23 /* Sources */,
+				9BBBD1251A22116400492C23 /* Frameworks */,
+				9BBBD1261A22116400492C23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9BBBD12B1A22116400492C23 /* PBXTargetDependency */,
+				9BBBD12D1A22116400492C23 /* PBXTargetDependency */,
+			);
+			name = ChartKitTests;
+			productName = ChartKitTests;
+			productReference = 9BBBD1281A22116400492C23 /* ChartKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -242,9 +398,18 @@
 				TargetAttributes = {
 					11C4C55B19E57B1100AE4243 = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = K37Z8FC634;
 					};
 					11C4C57219E57B1200AE4243 = {
 						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = 11C4C55B19E57B1100AE4243;
+					};
+					9BBBD11D1A22116400492C23 = {
+						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = K37Z8FC634;
+					};
+					9BBBD1271A22116400492C23 = {
+						CreatedOnToolsVersion = 6.1;
 						TestTargetID = 11C4C55B19E57B1100AE4243;
 					};
 				};
@@ -264,6 +429,8 @@
 			targets = (
 				11C4C55B19E57B1100AE4243 /* FamilyFinance */,
 				11C4C57219E57B1200AE4243 /* FamilyFinanceTests */,
+				9BBBD11D1A22116400492C23 /* ChartKit */,
+				9BBBD1271A22116400492C23 /* ChartKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -280,6 +447,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		11C4C57119E57B1200AE4243 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BBBD11C1A22116400492C23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BBBD1261A22116400492C23 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -342,6 +523,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9BBBD1191A22116400492C23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B103EC31A2215C8000A56CF /* UIColor+Chart.swift in Sources */,
+				9BBBD13F1A22120D00492C23 /* CircleChart.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BBBD1241A22116400492C23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BBBD1321A22116400492C23 /* ChartKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -349,6 +547,21 @@
 			isa = PBXTargetDependency;
 			target = 11C4C55B19E57B1100AE4243 /* FamilyFinance */;
 			targetProxy = 11C4C57419E57B1200AE4243 /* PBXContainerItemProxy */;
+		};
+		9BBBD12B1A22116400492C23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9BBBD11D1A22116400492C23 /* ChartKit */;
+			targetProxy = 9BBBD12A1A22116400492C23 /* PBXContainerItemProxy */;
+		};
+		9BBBD12D1A22116400492C23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11C4C55B19E57B1100AE4243 /* FamilyFinance */;
+			targetProxy = 9BBBD12C1A22116400492C23 /* PBXContainerItemProxy */;
+		};
+		9BBBD1341A22116400492C23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9BBBD11D1A22116400492C23 /* ChartKit */;
+			targetProxy = 9BBBD1331A22116400492C23 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -455,9 +668,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FamilyFinance/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "FamilyFinance/FamilyFinance-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -469,9 +686,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FamilyFinance/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "FamilyFinance/FamilyFinance-Bridging-Header.h";
 			};
 			name = Release;
@@ -510,6 +731,91 @@
 			};
 			name = Release;
 		};
+		9BBBD1381A22116400492C23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ChartKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9BBBD1391A22116400492C23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ChartKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9BBBD13C1A22116400492C23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ChartKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FamilyFinance.app/FamilyFinance";
+			};
+			name = Debug;
+		};
+		9BBBD13D1A22116400492C23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ChartKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FamilyFinance.app/FamilyFinance";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -536,6 +842,24 @@
 			buildConfigurations = (
 				11C4C58119E57B1200AE4243 /* Debug */,
 				11C4C58219E57B1200AE4243 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BBBD1371A22116400492C23 /* Build configuration list for PBXNativeTarget "ChartKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BBBD1381A22116400492C23 /* Debug */,
+				9BBBD1391A22116400492C23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BBBD13B1A22116400492C23 /* Build configuration list for PBXNativeTarget "ChartKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BBBD13C1A22116400492C23 /* Debug */,
+				9BBBD13D1A22116400492C23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
