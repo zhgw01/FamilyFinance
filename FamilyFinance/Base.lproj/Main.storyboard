@@ -28,7 +28,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="percent">
-                                        <real key="value" value="0.59999999999999998"/>
+                                        <real key="value" value="0.60000000000000009"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
                                         <real key="value" value="5"/>
@@ -66,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.25" y="-309.375"/>
+            <point key="canvasLocation" x="748.875" y="-309.375"/>
         </scene>
         <!--理财-->
         <scene sceneID="wg7-f3-ORb">

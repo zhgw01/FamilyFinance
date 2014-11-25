@@ -18,7 +18,7 @@ class CircleChart: UIView {
         case None
     }
     
-    var countingLabel: UILabel!
+    var countingLabel: CountingLabel!
     
     var backgroundRingLayer: CAShapeLayer!
     var ringLayer: CAShapeLayer!
@@ -42,7 +42,7 @@ class CircleChart: UIView {
         super.layoutSubviews()
         
         if countingLabel == nil {
-            countingLabel = UILabel(frame: CGRectMake(0, 0,100, 100))
+            countingLabel = CountingLabel(frame: CGRectMake(0, 0,100, 100))
             countingLabel.textAlignment = NSTextAlignment.Center
             countingLabel.font = UIFont.boldSystemFontOfSize(16.0)
             countingLabel.textColor = UIColor.grayColor()
@@ -111,7 +111,8 @@ class CircleChart: UIView {
         }
         
         if (countingLabel != nil) {
-            countingLabel.text = getPercentText()
+            countingLabel.text = "0%"
+            countingLabel.count(from: 0, to: Float(percent), duration: 1.0)
         }
     }
     
