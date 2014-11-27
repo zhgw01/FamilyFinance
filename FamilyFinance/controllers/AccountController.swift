@@ -8,50 +8,50 @@
 
 import UIKit
 
+class AccountController: UIViewController, GKLineGraphDataSource{
 
-class AccountController: UIViewController {
-
-    @IBOutlet weak var lineChartView: UIView!
-    var lineChart: PNLineChart!
     
+    @IBOutlet weak var lineGraph: GKLineGraph!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        lineGraph.lineWidth = 3.0
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        lineGraph.draw()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        if lineChart == nil {
-            createLineChart()
-        }
-        
-        lineChart.frame = lineChartView.bounds
-        lineChart.strokeChart()
     }
     
-    func createLineChart() {
-        lineChart = PNLineChart(frame: lineChartView.bounds)
+    var lineData = [[60.0, 160.0, 126.4, 262.2, 186.2]]
+    var labels = ["Jan", "Feb", "Mar", "April", "May"]
+    
+    
+    func numberOfLines() -> Int {
+        return lineData.count
+    }
+    
+    func colorForLineAtIndex(index: Int) -> UIColor {
+        let colors = [UIColor.gk_turquoiseColor(),
+                    UIColor.gk_peterRiverColor(),
+                    UIColor.gk_alizarinColor(),
+                    UIColor.gk_sunflowerColor()]
+        let count = colors.count
         
-        lineChart.xLabels = ["SEP 1", "SEP 2", "SEP 3", "SEP 4", "SEP 5"]
-        
-        let data = [60.0, 160.0, 126.4, 262.2, 186.2]
-        let chartData = PNLineChartData()
-        chartData.color = UIColor(red:77.0 / 255.0 , green:176.0 / 255.0, blue:122.0 / 255.0, alpha:1.0)
-        chartData.itemCount = UInt(lineChart.xLabels.count)
-        chartData.getData = { (index: UInt) -> PNLineChartDataItem in
-            let yValue = data[Int(index)]
-            return PNLineChartDataItem(y: CGFloat(yValue))
-        }
-        
-        lineChart.chartData = [chartData]
-        
-        lineChartView.addSubview(lineChart)
-        
+        return colors[index % count]
+    }
+    
+    func valuesForLineAtIndex(index: Int) -> [AnyObject]! {
+        return lineData[index]
+    }
+    
+    func titleForLineAtIndex(index: Int) -> String! {
+        let count = labels.count
+        return labels[index % count]
     }
 
 }

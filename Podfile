@@ -2,5 +2,5 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, "7.0"
 
-pod 'PNChart', '~> 0.5'
+pod 'GraphKit', '~> 1.1.1'
 
