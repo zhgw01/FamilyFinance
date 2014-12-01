@@ -34,6 +34,7 @@ class CircleChart: UIView {
             updateLayerProperties()
         }
     }
+    @IBInspectable var labelColor: UIColor = UIColor.whiteColor()
     
     var chartType: ChartType = .Percent
     
@@ -45,7 +46,7 @@ class CircleChart: UIView {
             countingLabel = CountingLabel(frame: CGRectMake(0, 0,100, 100))
             countingLabel.textAlignment = NSTextAlignment.Center
             countingLabel.font = UIFont.boldSystemFontOfSize(16.0)
-            countingLabel.textColor = UIColor.grayColor()
+            countingLabel.textColor = labelColor
             countingLabel.backgroundColor = UIColor.clearColor()
             countingLabel.center = CGPointMake(self.bounds.size.width / 2.0, self.bounds.size.height / 2.0)
             
