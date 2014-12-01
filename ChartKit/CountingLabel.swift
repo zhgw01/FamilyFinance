@@ -18,7 +18,7 @@ class CountingLabel: UILabel
     private var totalTime: NSTimeInterval = 0
     private var startValue: Float = 0
     private var endVale: Float = 0
-    private var format: String = "%.2f"
+    private var format: String = "%.2f%%"
     
     
     func update(t: Float) -> Float

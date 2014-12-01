@@ -8,18 +8,18 @@
 
 import UIKit
 
-class AccountController: UIViewController, GKLineGraphDataSource{
+class AccountController: UIViewController{
 
     
-    @IBOutlet weak var lineGraph: GKLineGraph!
+    @IBOutlet weak var barGraph: GKBarGraph!
     override func viewDidLoad() {
         super.viewDidLoad()
-        lineGraph.lineWidth = 3.0
+        barGraph.backgroundColor = UIColor(patternImage: UIImage(named: "graphbg")!)
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        lineGraph.draw()
+        barGraph.draw()
     }
     
     override func viewDidLayoutSubviews() {
@@ -27,32 +27,32 @@ class AccountController: UIViewController, GKLineGraphDataSource{
         
     }
     
-    var lineData = [[60.0, 160.0, 126.4, 262.2, 186.2]]
-    var labels = ["Jan", "Feb", "Mar", "April", "May"]
+    var data = [60.0, 160.0, 126.4, 262.2, 186.2, 100, 70, 0, 0, 0, 0, 0]
+    var labels = ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月","十一月", "十二月"]
     
-    
-    func numberOfLines() -> Int {
-        return lineData.count
+}
+
+extension AccountController: GKBarGraphDataSource
+{
+    func numberOfBars() -> Int {
+        return data.count;
     }
     
-    func colorForLineAtIndex(index: Int) -> UIColor {
-        let colors = [UIColor.gk_turquoiseColor(),
-                    UIColor.gk_peterRiverColor(),
-                    UIColor.gk_alizarinColor(),
-                    UIColor.gk_sunflowerColor()]
-        let count = colors.count
-        
-        return colors[index % count]
+    func valueForBarAtIndex(index: Int) -> NSNumber! {
+        let count = data.count;
+        return data[index % count]
     }
     
-    func valuesForLineAtIndex(index: Int) -> [AnyObject]! {
-        return lineData[index]
-    }
-    
-    func titleForLineAtIndex(index: Int) -> String! {
+    func titleForBarAtIndex(index: Int) -> String! {
         let count = labels.count
         return labels[index % count]
     }
-
+    
+    func colorForBarAtIndex(index: Int) -> UIColor! {
+        return UIColor(red: 60.0 / 255.0, green: 81.0 / 255.0, blue: 110.0 / 255.0, alpha: 1.0)
+    }
+    
+    func colorForBarBackgroundAtIndex(index: Int) -> UIColor! {
+        return UIColor(red: 53.0 / 255.0, green: 49.0 / 255.0, blue: 67.0 / 255.0, alpha: 1.0)
+    }
 }
-
