@@ -39,7 +39,7 @@ class LineLabel: UIView {
     
     var upperLine: UIView!
     var bottomLine: UIView!
-    var lineBorder: CGFloat = 2.0
+    var lineBorder: CGFloat = 1.0
     @IBInspectable var decoratorLineColor: UIColor =  UIColor(red: 59.0 / 255.0, green: 55.0 / 255.0, blue: 72.0 / 255.0, alpha: 1.0) {
         didSet {
             upperLine.backgroundColor = decoratorLineColor
