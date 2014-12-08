@@ -19,16 +19,25 @@ class AccountController: UIViewController{
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        barGraph.draw()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+        //setup bar width
+        let width = barGraph.bounds.size.width;
+        let count = barGraph.dataSource!.numberOfBars()
+        let barSpace = width / CGFloat(count);
+        let barWidth = barSpace > 2.0 ? barSpace / 2.0 + 1 : barSpace
+        let barMargin = barSpace - barWidth
+        barGraph.barWidth = barWidth;
+        barGraph.marginBar = barMargin
+        barGraph.draw()
+        
     }
     
     var data = [60.0, 160.0, 126.4, 262.2, 186.2, 100, 70, 0, 0, 0, 0, 0]
-    var labels = ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月","十一月", "十二月"]
+    var labels = ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月","十月","十一", "十二"]
     
 }
 
