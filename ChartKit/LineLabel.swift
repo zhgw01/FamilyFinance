@@ -12,7 +12,16 @@ import UIKit
 class LineLabel: UIView {
     
     var numberLabel: UILabel = UILabel()
-    @IBInspectable var number: Int = 0
+    @IBInspectable var number: Int = 0 {
+        didSet {
+            let format = NSNumberFormatter()
+            format.usesGroupingSeparator = true
+            format.groupingSeparator = ","
+            format.groupingSize = 3
+            
+            numberLabel.text = format.stringFromNumber(number)
+        }
+    }
     @IBInspectable var numberLabelFontSize: CGFloat = 20 {
         didSet {
             numberLabel.font = UIFont.systemFontOfSize(numberLabelFontSize)
@@ -25,7 +34,11 @@ class LineLabel: UIView {
     }
     
     var categoryLabel: UILabel = UILabel()
-    @IBInspectable var category: String = "total"
+    @IBInspectable var category: String = "total" {
+        didSet {
+            categoryLabel.text = category
+        }
+    }
     @IBInspectable var categoryLabelFontSize: CGFloat = 12 {
         didSet {
             categoryLabel.font = UIFont.systemFontOfSize(categoryLabelFontSize)
@@ -37,13 +50,17 @@ class LineLabel: UIView {
         }
     }
     
-    var upperLine: UIView!
-    var bottomLine: UIView!
+    var upperLine: CAShapeLayer!
+    var bottomLine: CAShapeLayer!
     var lineBorder: CGFloat = 1.0
-    @IBInspectable var decoratorLineColor: UIColor =  UIColor(red: 59.0 / 255.0, green: 55.0 / 255.0, blue: 72.0 / 255.0, alpha: 1.0) {
+    @IBInspectable var upperLineColor: UIColor =  UIColor(red: 59.0 / 255.0, green: 55.0 / 255.0, blue: 72.0 / 255.0, alpha: 1.0) {
         didSet {
-            upperLine.backgroundColor = decoratorLineColor
-            bottomLine.backgroundColor = decoratorLineColor
+            upperLine?.strokeColor = upperLineColor.CGColor
+        }
+    }
+    @IBInspectable var bottomLineColor: UIColor =  UIColor(red: 59.0 / 255.0, green: 55.0 / 255.0, blue: 72.0 / 255.0, alpha: 1.0) {
+        didSet {
+            bottomLine?.strokeColor = bottomLineColor.CGColor
         }
     }
     
@@ -60,16 +77,16 @@ class LineLabel: UIView {
     func setup() {
         self.addSubview(numberLabel)
         self.addSubview(categoryLabel)
+        categoryLabel.textAlignment = NSTextAlignment.Right
+        setupSubViewFrame()
     }
     
     func setupSubViewFrame() {
-        upperLine.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: lineBorder)
-        bottomLine.frame = CGRect(x: 0, y: frame.size.height - 1, width: frame.size.width, height: 1.0)
         
         let innerRect = CGRectInset(self.bounds, 1.0, lineBorder)
         var leftRect = CGRectZero
         var rightRect = CGRectZero
-        CGRectDivide(self.bounds, &leftRect, &rightRect, self.bounds.width * 0.6, CGRectEdge.MaxXEdge)
+        CGRectDivide(self.bounds, &leftRect, &rightRect, self.bounds.width * 0.6, CGRectEdge.MinXEdge)
         
         numberLabel.frame = leftRect
         categoryLabel.frame = rightRect
@@ -80,16 +97,27 @@ class LineLabel: UIView {
         super.layoutSubviews()
         
         if upperLine == nil {
-            upperLine = UIView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: lineBorder))
-            upperLine.backgroundColor = decoratorLineColor
-            self.addSubview(upperLine)
+            upperLine = CAShapeLayer()
+            let linePath = UIBezierPath()
+            linePath.moveToPoint(CGPointMake(0, 0))
+            linePath.addLineToPoint(CGPointMake(frame.size.width, 0))
+            upperLine.path = linePath.CGPath
+            upperLine.strokeColor = upperLineColor.CGColor
+            layer.addSublayer(upperLine)
         }
+        upperLine.frame = bounds
         
         if bottomLine == nil {
-            bottomLine = UIView(frame: CGRect(x: 0, y: frame.size.height - lineBorder, width: frame.size.width, height: lineBorder))
-            bottomLine.backgroundColor = decoratorLineColor
-            self.addSubview(bottomLine)
+            bottomLine = CAShapeLayer()
+            let linePath = UIBezierPath()
+            linePath.moveToPoint(CGPointMake(0, frame.size.height - lineBorder))
+            linePath.addLineToPoint(CGPointMake(frame.size.width, frame.size.height - lineBorder))
+            bottomLine.path = linePath.CGPath
+            bottomLine.strokeColor = bottomLineColor.CGColor
+            bottomLine.fillColor = nil
+            layer.addSublayer(bottomLine)
         }
+        bottomLine.frame = bounds
         
         
         setupSubViewFrame()
