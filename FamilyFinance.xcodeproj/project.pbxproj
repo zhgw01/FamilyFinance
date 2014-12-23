@@ -19,6 +19,7 @@
 		9B069CBE1A3879E600C2E2E8 /* EditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B069CBD1A3879E600C2E2E8 /* EditController.swift */; };
 		9B103EC31A2215C8000A56CF /* UIColor+Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B103EC21A2215C8000A56CF /* UIColor+Chart.swift */; };
 		9B37A7E71A35DA8B005829C7 /* LineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37A7E61A35DA8B005829C7 /* LineLabel.swift */; };
+		9B914AF41A407C9400813E6A /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B914AF31A407C9400813E6A /* CurrencyTextField.swift */; };
 		9BB2BB2E1A24B7680045602A /* CountingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB2BB2D1A24B7680045602A /* CountingLabel.swift */; };
 		9BBBD1231A22116400492C23 /* ChartKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BBBD1221A22116400492C23 /* ChartKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9BBBD1291A22116400492C23 /* ChartKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBBD11E1A22116400492C23 /* ChartKit.framework */; };
@@ -92,6 +93,7 @@
 		9B069CBD1A3879E600C2E2E8 /* EditController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditController.swift; path = controllers/EditController.swift; sourceTree = "<group>"; };
 		9B103EC21A2215C8000A56CF /* UIColor+Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Chart.swift"; sourceTree = "<group>"; };
 		9B37A7E61A35DA8B005829C7 /* LineLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineLabel.swift; sourceTree = "<group>"; };
+		9B914AF31A407C9400813E6A /* CurrencyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
 		9BB2BB2D1A24B7680045602A /* CountingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountingLabel.swift; sourceTree = "<group>"; };
 		9BBBD11E1A22116400492C23 /* ChartKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChartKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BBBD1211A22116400492C23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				9B103EC21A2215C8000A56CF /* UIColor+Chart.swift */,
 				9BB2BB2D1A24B7680045602A /* CountingLabel.swift */,
 				9B37A7E61A35DA8B005829C7 /* LineLabel.swift */,
+				9B914AF31A407C9400813E6A /* CurrencyTextField.swift */,
 			);
 			path = ChartKit;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				9B103EC31A2215C8000A56CF /* UIColor+Chart.swift in Sources */,
 				9BB2BB2E1A24B7680045602A /* CountingLabel.swift in Sources */,
 				9B37A7E71A35DA8B005829C7 /* LineLabel.swift in Sources */,
+				9B914AF41A407C9400813E6A /* CurrencyTextField.swift in Sources */,
 				9BBBD13F1A22120D00492C23 /* CircleChart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

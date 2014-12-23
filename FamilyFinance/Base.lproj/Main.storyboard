@@ -245,7 +245,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" text="0" textAlignment="justified" minimumFontSize="17" id="K1R-iB-Vgt">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" text="0" textAlignment="justified" minimumFontSize="17" id="K1R-iB-Vgt" customClass="CurrencyTextField" customModule="ChartKit">
                                 <rect key="frame" x="122" y="51" width="186" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
