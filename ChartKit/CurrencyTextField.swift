@@ -25,16 +25,13 @@ class CurrencyTextField: UITextField {
         }
     }
     
-    override var text: String! {
-        get {
-            return super.text
-        }
-        
-        set {
-            let formatted = formatter.stringFromNumber(amountFromString(newValue))
-            super.text = formatted
+    var number: NSNumber = NSNumber(unsignedInt: 0){
+        didSet {
+            let formatted = formatter.stringFromNumber(number)
+            text = formatted
         }
     }
+    
     
     override var delegate: UITextFieldDelegate? {
         get {
@@ -51,8 +48,13 @@ class CurrencyTextField: UITextField {
         formatter.locale = NSLocale.currentLocale()
         formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
         formatter.usesGroupingSeparator = true
+        formatter.generatesDecimalNumbers = true
+        formatter.minimumFractionDigits = 0
+        
         
         super.delegate = currencyDelegate
+        
+        number = NSDecimalNumber(unsignedInt: 0)
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -80,9 +82,10 @@ class CurrencyTextField: UITextField {
     }
     
     func amountFromString(string: String) -> Double {
-        
         let components = string.componentsSeparatedByCharactersInSet(invalidInputCharacterSet)
+        
         let digitString = join("", components) as NSString
+
         let fractionDigit = Double(formatter.minimumFractionDigits)
         
         let result = digitString.doubleValue / pow(10.0, fractionDigit)
@@ -94,6 +97,8 @@ class CurrencyTextField: UITextField {
 class CurrencyTextFieldDelegate:NSObject, UITextFieldDelegate {
     
     weak var delegate: UITextFieldDelegate?
+    var maximumInteger: Int = 7
+    var maximumFraction: Int = 2
     
     override func respondsToSelector(aSelector: Selector) -> Bool {
         return super.respondsToSelector(aSelector) || delegate?.respondsToSelector(aSelector) == true
@@ -108,34 +113,71 @@ class CurrencyTextFieldDelegate:NSObject, UITextFieldDelegate {
         }
     }
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func exceedLimit(candidate: String, formatter: NSNumberFormatter) -> Bool {
         
-        if let currencyTextField = textField as? CurrencyTextField {
-            
-            let textString: NSString = textField.text
-            
-            if (textString.length == 0 && range.length == 1 && currencyTextField.invalidInputCharacterSet.characterIsMember(textString.characterAtIndex(range.location))) {
-                    currencyTextField.setCaratPosition(range.location)
-                    return false;
-            }
-            
-            let distanceFromEnd = textString.length -  (range.location + range.length)
-            let changedString = textString.stringByReplacingCharactersInRange(range, withString: string)
-            textField.text = changedString
-            
-            let pos = changedString.utf16Count - distanceFromEnd
-            if (pos >= 0 && pos <= changedString.utf16Count) {
-                currencyTextField.setCaratPosition(pos)
-            }
-            
-            textField.sendActionsForControlEvents(UIControlEvents.EditingChanged)
-            
-            return false
+        func digits(rawString: String) -> Int {
+            let components = rawString.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet)
+            let digitStrings = join("", components)
+            return digitStrings.utf16Count
         }
         
+        let components = candidate.componentsSeparatedByString(formatter.decimalSeparator!)
+        if (digits(components[0]) > maximumInteger) {
+            return true
+        }
         
-
+        if (components.count > 1 && digits(components[1]) > maximumFraction) {
+            return true
+        }
         
         return false
     }
+    
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        
+        let textString = textField.text as NSString
+        let candidate = textString.stringByReplacingCharactersInRange(range, withString: string)
+        
+        
+        if let currencyTextField = textField as? CurrencyTextField {
+            
+            if (exceedLimit(candidate, formatter: currencyTextField.formatter)) {
+                return false;
+            }
+            
+            //handle decimal seperator specially
+            if let decimialSeperator = currencyTextField.formatter.decimalSeparator {
+                if textString.containsString(decimialSeperator) || string == decimialSeperator {
+                    return true
+                }
+            }
+            
+            //when formatter cannot correctly handle the text
+            if let number = currencyTextField.formatter.numberFromString(candidate){
+                currencyTextField.number = number
+            }
+            else {
+                
+                var intValue = currencyTextField.number.integerValue
+                //delete
+                if (string.isEmpty) {
+                  currencyTextField.number = NSNumber(integer: intValue / 10)
+                } else {
+                    intValue = intValue * 10
+                    if let newValue = string.toInt() {
+                        intValue += newValue
+                    }
+                  currencyTextField.number = NSNumber(integer: intValue)
+                }
+            }
+            
+            
+            textField.sendActionsForControlEvents(UIControlEvents.EditingChanged)
+            return false
+        }
+        
+        return true
+        
+     }
 }
