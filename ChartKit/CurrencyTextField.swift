@@ -14,16 +14,6 @@ class CurrencyTextField: UITextField {
     var invalidInputCharacterSet: NSCharacterSet = NSCharacterSet.decimalDigitCharacterSet().invertedSet
     var formatter: NSNumberFormatter = NSNumberFormatter()
     let currencyDelegate = CurrencyTextFieldDelegate()
-    var amount: Double {
-        get {
-            return amountFromString(text)
-        }
-        
-        set(newAmount) {
-            let amountString = NSString(format: "%.*lf", formatter.maximumFractionDigits, newAmount)
-            text = amountString
-        }
-    }
     
     var number: NSNumber = NSNumber(unsignedInt: 0){
         didSet {
@@ -67,31 +57,7 @@ class CurrencyTextField: UITextField {
         setup()
     }
     
-    func setCaratPosition(pos: Int)
-    {
-        setSelectionRange(NSMakeRange(pos, 0))
-    }
-    
-    func setSelectionRange(range: NSRange)
-    {
-        if let start = positionFromPosition(beginningOfDocument, offset: range.location) {
-            if let end = positionFromPosition(start, offset: range.length) {
-                selectedTextRange = textRangeFromPosition(start, toPosition: end)
-            }
-        }
-    }
-    
-    func amountFromString(string: String) -> Double {
-        let components = string.componentsSeparatedByCharactersInSet(invalidInputCharacterSet)
-        
-        let digitString = join("", components) as NSString
 
-        let fractionDigit = Double(formatter.minimumFractionDigits)
-        
-        let result = digitString.doubleValue / pow(10.0, fractionDigit)
-        
-        return result
-    }
 }
 
 class CurrencyTextFieldDelegate:NSObject, UITextFieldDelegate {
