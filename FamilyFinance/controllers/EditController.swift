@@ -11,6 +11,14 @@ import UIKit
 class EditController: UIViewController
 {
     
+    @IBOutlet weak var categoryView: UIView!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        categoryView.backgroundColor = UIColor(patternImage: UIImage(named: "graphbg")!)
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBarHidden = false
