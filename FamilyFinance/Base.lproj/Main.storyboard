@@ -253,6 +253,14 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.16641565329999999" green="0.2001510692" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="hIv-7c-2hE">
+                                <rect key="frame" x="119" y="516" width="123" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="收入"/>
+                                    <segment title="支出"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.21568627450980393" green="0.20000000000000001" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
