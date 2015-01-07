@@ -28,6 +28,11 @@ class EditController: UIViewController
         super.viewDidLoad()
         categoryView.backgroundColor = UIColor(patternImage: UIImage(named: "graphbg")!)
         
+        if let flowLayout = categoryView.collectionViewLayout as? UICollectionViewFlowLayout {
+            let top = (categoryView.frame.height - flowLayout.itemSize.height * 2 - flowLayout.minimumInteritemSpacing) / 2.0
+            flowLayout.sectionInset = UIEdgeInsets(top: top, left: 0, bottom: top, right: 0)
+        }
+        
         getFiles()
     }
     
@@ -63,10 +68,11 @@ extension EditController: UICollectionViewDataSource
     }
 }
 
-extension EditController: UICollectionViewDelegate
+extension EditController: UICollectionViewDelegateFlowLayout
 {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
     }
+    
     
 }
