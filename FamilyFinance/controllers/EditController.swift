@@ -53,8 +53,10 @@ extension EditController: UICollectionViewDataSource
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as CategoryCell
         
         //configure the cell
-        //cell.backgroundColor = UIColor.whiteColor()
-        cell.imageView.image = UIImage(named: images[indexPath.row])
+        let imagePath = images[indexPath.row]
+        cell.imageView.image = UIImage(named: imagePath)
+        
+        cell.label.text = NSFileManager.defaultManager().displayNameAtPath(imagePath).stringByDeletingPathExtension
         
         return cell
         
