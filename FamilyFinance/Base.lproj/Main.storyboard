@@ -295,6 +295,7 @@
                     <navigationItem key="navigationItem" id="CIs-eR-wqB"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="categoryLabel" destination="cmf-pC-X5v" id="0Z7-9b-Nxc"/>
                         <outlet property="categoryView" destination="dbe-l4-937" id="YuZ-MO-YMg"/>
                     </connections>
                 </viewController>

@@ -12,6 +12,7 @@ class EditController: UIViewController
 {
     
     @IBOutlet weak var categoryView: UICollectionView!
+    @IBOutlet weak var categoryLabel: UILabel!
     
     private let reuseIdentifier = "CategoryCell"
     
@@ -71,7 +72,9 @@ extension EditController: UICollectionViewDataSource
 extension EditController: UICollectionViewDelegateFlowLayout
 {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
+        let imagePath = images[indexPath.row]
+        let basename = NSFileManager.defaultManager().displayNameAtPath(imagePath).stringByDeletingPathExtension
+        categoryLabel.text = basename
     }
     
     
