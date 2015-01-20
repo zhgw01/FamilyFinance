@@ -178,6 +178,9 @@
                                 <state key="normal" title="保存">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onSave:" destination="PTy-3X-rVk" eventType="touchUpInside" id="DoU-M3-AVs"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Koa-vw-qWG">
                                 <rect key="frame" x="234" y="560" width="30" height="30"/>

@@ -29,6 +29,9 @@
 		9B39A5631A5AD64F00B0C182 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B39A5621A5AD64F00B0C182 /* CategoryCell.swift */; };
 		9B75DE161A5D608C00B33E2C /* cloth.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B75DE151A5D608C00B33E2C /* cloth.png */; };
 		9B914AF41A407C9400813E6A /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B914AF31A407C9400813E6A /* CurrencyTextField.swift */; };
+		9BA011A11A6E904E005F6567 /* Cash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA011A01A6E904E005F6567 /* Cash.swift */; };
+		9BA011A31A6E9171005F6567 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA011A21A6E9171005F6567 /* RLMSupport.swift */; };
+		9BA011A51A6E944A005F6567 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA011A41A6E944A005F6567 /* Category.swift */; };
 		9BB2BB2E1A24B7680045602A /* CountingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB2BB2D1A24B7680045602A /* CountingLabel.swift */; };
 		9BBBD1231A22116400492C23 /* ChartKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BBBD1221A22116400492C23 /* ChartKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9BBBD1291A22116400492C23 /* ChartKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBBD11E1A22116400492C23 /* ChartKit.framework */; };
@@ -112,6 +115,9 @@
 		9B39A5621A5AD64F00B0C182 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryCell.swift; path = View/CategoryCell.swift; sourceTree = "<group>"; };
 		9B75DE151A5D608C00B33E2C /* cloth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloth.png; sourceTree = "<group>"; };
 		9B914AF31A407C9400813E6A /* CurrencyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
+		9BA011A01A6E904E005F6567 /* Cash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cash.swift; path = Model/Cash.swift; sourceTree = "<group>"; };
+		9BA011A21A6E9171005F6567 /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
+		9BA011A41A6E944A005F6567 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = Model/Category.swift; sourceTree = "<group>"; };
 		9BB2BB2D1A24B7680045602A /* CountingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountingLabel.swift; sourceTree = "<group>"; };
 		9BBBD11E1A22116400492C23 /* ChartKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChartKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BBBD1211A22116400492C23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -172,6 +178,9 @@
 		1105956819EC093E00FF65EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9BA011A21A6E9171005F6567 /* RLMSupport.swift */,
+				9BA011A01A6E904E005F6567 /* Cash.swift */,
+				9BA011A41A6E944A005F6567 /* Category.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -558,9 +567,12 @@
 			files = (
 				11C4C56219E57B1100AE4243 /* AppDelegate.swift in Sources */,
 				9B069CBE1A3879E600C2E2E8 /* EditController.swift in Sources */,
+				9BA011A31A6E9171005F6567 /* RLMSupport.swift in Sources */,
 				1105956719EC08EF00FF65EC /* FinanceController.swift in Sources */,
 				1105956619EC08EF00FF65EC /* AccountController.swift in Sources */,
+				9BA011A11A6E904E005F6567 /* Cash.swift in Sources */,
 				9B39A5631A5AD64F00B0C182 /* CategoryCell.swift in Sources */,
+				9BA011A51A6E944A005F6567 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

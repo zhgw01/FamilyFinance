@@ -34,6 +34,8 @@ class EditController: UIViewController
             flowLayout.sectionInset = UIEdgeInsets(top: top, left: 0, bottom: top, right: 0)
         }
         
+        println(RLMRealm.defaultRealm().path)
+        
         getFiles()
     }
     
@@ -45,6 +47,27 @@ class EditController: UIViewController
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.navigationBarHidden = true
+    }
+   
+    @IBAction func onSave(sender: UIButton) {
+        
+        let category = Category()
+        category.name = "traffic"
+        category.image = "car.png"
+        category.type = 0
+        
+        let income = Cash()
+        income.number = 100
+        income.title = "car"
+        income.content = "go to company"
+        income.category = category
+        
+        let db = RLMRealm.defaultRealm()
+        db.beginWriteTransaction()
+        //db.addObject(category)
+        db.addObject(income)
+        db.commitWriteTransaction()
+        
     }
 }
 
