@@ -18,6 +18,7 @@
 		808438D82402DD231E1FB6DD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 501D06C7B6F7CD7BD3A2C33E /* libPods.a */; };
 		9B069CBE1A3879E600C2E2E8 /* EditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B069CBD1A3879E600C2E2E8 /* EditController.swift */; };
 		9B103EC31A2215C8000A56CF /* UIColor+Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B103EC21A2215C8000A56CF /* UIColor+Chart.swift */; };
+		9B2E9EFA1A6FE10F006375F6 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2E9EF91A6FE10F006375F6 /* DBManager.swift */; };
 		9B37A7E71A35DA8B005829C7 /* LineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37A7E61A35DA8B005829C7 /* LineLabel.swift */; };
 		9B39A55B1A5ACDF900B0C182 /* entertainment.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B39A5531A5ACDF900B0C182 /* entertainment.png */; };
 		9B39A55C1A5ACDF900B0C182 /* food.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B39A5541A5ACDF900B0C182 /* food.png */; };
@@ -104,6 +105,7 @@
 		55C7116BA96CFBB8A8ACFA07 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9B069CBD1A3879E600C2E2E8 /* EditController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditController.swift; path = controllers/EditController.swift; sourceTree = "<group>"; };
 		9B103EC21A2215C8000A56CF /* UIColor+Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Chart.swift"; sourceTree = "<group>"; };
+		9B2E9EF91A6FE10F006375F6 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DBManager.swift; path = Model/DBManager.swift; sourceTree = "<group>"; };
 		9B37A7E61A35DA8B005829C7 /* LineLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineLabel.swift; sourceTree = "<group>"; };
 		9B39A5531A5ACDF900B0C182 /* entertainment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = entertainment.png; sourceTree = "<group>"; };
 		9B39A5541A5ACDF900B0C182 /* food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food.png; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				9BA011A21A6E9171005F6567 /* RLMSupport.swift */,
 				9BA011A01A6E904E005F6567 /* Cash.swift */,
 				9BA011A41A6E944A005F6567 /* Category.swift */,
+				9B2E9EF91A6FE10F006375F6 /* DBManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				9B069CBE1A3879E600C2E2E8 /* EditController.swift in Sources */,
 				9BA011A31A6E9171005F6567 /* RLMSupport.swift in Sources */,
 				1105956719EC08EF00FF65EC /* FinanceController.swift in Sources */,
+				9B2E9EFA1A6FE10F006375F6 /* DBManager.swift in Sources */,
 				1105956619EC08EF00FF65EC /* AccountController.swift in Sources */,
 				9BA011A11A6E904E005F6567 /* Cash.swift in Sources */,
 				9B39A5631A5AD64F00B0C182 /* CategoryCell.swift in Sources */,

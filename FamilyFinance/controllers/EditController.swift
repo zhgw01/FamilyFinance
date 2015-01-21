@@ -16,15 +16,10 @@ class EditController: UIViewController
     
     private let reuseIdentifier = "CategoryCell"
     
-    private var images = [String]()
+    private var categories: RLMResults!
+    private let dbManager = DbManager.sharedInstance
     
-    func getFiles() {
-        let paths = NSBundle.mainBundle().pathsForResourcesOfType("png", inDirectory: nil) as? [String]
-        if paths != nil {
-            images = paths!
-        }
-    }
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         categoryView.backgroundColor = UIColor(patternImage: UIImage(named: "graphbg")!)
@@ -36,7 +31,8 @@ class EditController: UIViewController
         
         println(RLMRealm.defaultRealm().path)
         
-        getFiles()
+        //getFiles()
+        categories = dbManager.populateCategories()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -48,6 +44,8 @@ class EditController: UIViewController
         super.viewWillDisappear(animated)
         navigationController?.navigationBarHidden = true
     }
+
+    
    
     @IBAction func onSave(sender: UIButton) {
         
@@ -75,17 +73,17 @@ class EditController: UIViewController
 extension EditController: UICollectionViewDataSource
 {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return Int(categories.count)
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as CategoryCell
         
         //configure the cell
-        let imagePath = images[indexPath.row]
-        cell.imageView.image = UIImage(named: imagePath)
+        let category = categories[UInt(indexPath.row)] as Category
         
-        cell.label.text = NSFileManager.defaultManager().displayNameAtPath(imagePath).stringByDeletingPathExtension
+        cell.imageView.image = UIImage(named: category.image)
+        cell.label.text = category.name
         
         return cell
         
@@ -95,9 +93,8 @@ extension EditController: UICollectionViewDataSource
 extension EditController: UICollectionViewDelegateFlowLayout
 {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let imagePath = images[indexPath.row]
-        let basename = NSFileManager.defaultManager().displayNameAtPath(imagePath).stringByDeletingPathExtension
-        categoryLabel.text = basename
+        let category = categories[UInt(indexPath.row)] as Category
+        categoryLabel.text = category.name
     }
     
     
