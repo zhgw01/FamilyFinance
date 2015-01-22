@@ -21,6 +21,7 @@ class EditController: UIViewController
     private let dbManager = DbManager.sharedInstance
     
     private var cashNumber = 0.0
+    private var cashDescription = ""
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,5 +111,22 @@ extension EditController: UITextFieldDelegate
         if let currencyTextuField = textField as? CurrencyTextField {
            cashNumber = currencyTextuField.number as Double
         }
+    }
+}
+
+extension EditController: UITextViewDelegate
+{
+    func textViewDidEndEditing(textView: UITextView) {
+        cashDescription = textView.text
+        textView.resignFirstResponder()
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if (text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        
+        return true
     }
 }
