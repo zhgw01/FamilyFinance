@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChartKit
 
 class EditController: UIViewController
 {
@@ -19,6 +20,7 @@ class EditController: UIViewController
     private var categories: RLMResults!
     private let dbManager = DbManager.sharedInstance
     
+    private var cashNumber = 0.0
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,5 +102,13 @@ extension EditController: UICollectionViewDelegateFlowLayout
         categoryLabel.text = category.name
     }
     
-    
+}
+
+extension EditController: UITextFieldDelegate
+{
+    func textFieldDidEndEditing(textField: UITextField) {
+        if let currencyTextuField = textField as? CurrencyTextField {
+           cashNumber = currencyTextuField.number as Double
+        }
+    }
 }

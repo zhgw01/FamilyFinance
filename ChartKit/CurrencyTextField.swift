@@ -10,12 +10,12 @@
 import UIKit
 
 
-class CurrencyTextField: UITextField {
+public class CurrencyTextField: UITextField {
     var invalidInputCharacterSet: NSCharacterSet = NSCharacterSet.decimalDigitCharacterSet().invertedSet
     var formatter: NSNumberFormatter = NSNumberFormatter()
     let currencyDelegate = CurrencyTextFieldDelegate()
     
-    var number: NSNumber = NSNumber(unsignedInt: 0){
+    public var number: NSNumber = NSNumber(unsignedInt: 0){
         didSet {
             let formatted = formatter.stringFromNumber(number)
             text = formatted
@@ -23,7 +23,7 @@ class CurrencyTextField: UITextField {
     }
     
     
-    override var delegate: UITextFieldDelegate? {
+    override public var delegate: UITextFieldDelegate? {
         get {
             return currencyDelegate.delegate
         }
@@ -47,12 +47,12 @@ class CurrencyTextField: UITextField {
         number = NSDecimalNumber(unsignedInt: 0)
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
