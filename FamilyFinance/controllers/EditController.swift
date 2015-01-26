@@ -24,7 +24,12 @@ class EditController: UIViewController
     private var cashDescription = ""
     
     private var categoryType: CategoryType = .Expand
-    private var selectedCategory: UInt = 0
+    private var selectedCategory: UInt = 0 {
+        didSet {
+            let category = categories[selectedCategory] as Category
+            categoryLabel.text = category.name
+        }
+    }
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +46,7 @@ class EditController: UIViewController
         println(RLMRealm.defaultRealm().path)
         
         categories = dbManager.populateCategories()
+        selectedCategory = 0
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -113,8 +119,8 @@ extension EditController: UICollectionViewDataSource
 extension EditController: UICollectionViewDelegateFlowLayout
 {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let category = categories[UInt(indexPath.row)] as Category
-        categoryLabel.text = category.name
+        selectedCategory = UInt(indexPath.row)
+
     }
     
 }
