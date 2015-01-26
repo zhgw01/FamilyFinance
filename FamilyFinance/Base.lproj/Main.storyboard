@@ -189,6 +189,9 @@
                                 <state key="normal" title="取消">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onCancel:" destination="PTy-3X-rVk" eventType="touchUpInside" id="5QP-Rp-xWr"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="dbe-l4-937">
                                 <rect key="frame" x="0.0" y="297" width="375" height="199"/>
@@ -298,6 +301,9 @@
                                     <segment title="收入"/>
                                     <segment title="支出"/>
                                 </segments>
+                                <connections>
+                                    <action selector="onCategoryTypeChange:" destination="PTy-3X-rVk" eventType="valueChanged" id="kid-JV-9Q0"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.21568627450980393" green="0.20000000000000001" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

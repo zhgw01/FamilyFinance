@@ -22,6 +22,9 @@ class EditController: UIViewController
     
     private var cashNumber = 0.0
     private var cashDescription = ""
+    
+    private var categoryType: CategoryType = .Expand
+    private var selectedCategory: UInt = 0
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +40,6 @@ class EditController: UIViewController
         
         println(RLMRealm.defaultRealm().path)
         
-        //getFiles()
         categories = dbManager.populateCategories()
     }
     
@@ -52,6 +54,13 @@ class EditController: UIViewController
     }
 
     
+    @IBAction func onCategoryTypeChange(sender: UISegmentedControl) {
+       //reload the categories and set selected Index to 0
+        
+        categoryType = CategoryType(rawValue:sender.selectedSegmentIndex)!
+        NSLog("category type: %d", categoryType.rawValue)
+        
+    }
    
     @IBAction func onSave(sender: UIButton) {
         
@@ -72,6 +81,11 @@ class EditController: UIViewController
         db.addObject(income)
         db.commitWriteTransaction()
         
+    }
+    
+    @IBAction func onCancel(sender: UIButton) {
+        
+        NSLog("Cancel")
     }
 }
 
