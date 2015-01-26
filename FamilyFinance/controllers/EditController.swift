@@ -14,6 +14,7 @@ class EditController: UIViewController
     
     @IBOutlet weak var categoryView: UICollectionView!
     @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var monthLabel: UILabel!
     
     private let reuseIdentifier = "CategoryCell"
     
@@ -29,6 +30,18 @@ class EditController: UIViewController
             let category = categories[selectedCategory] as Category
             categoryLabel.text = category.name
         }
+    }
+    
+    private var createdDate = NSDate()
+    
+    private func setMonth(date: NSDate) {
+        let formatter = NSDateFormatter()
+        
+        formatter.locale = NSLocale(localeIdentifier: "zh_CN")
+        formatter.dateFormat = "LLLL"
+        
+        monthLabel.text = formatter.stringFromDate(date)
+        
     }
   
     override func viewDidLoad() {
@@ -47,6 +60,9 @@ class EditController: UIViewController
         
         categories = dbManager.populateCategories()
         selectedCategory = 0
+        
+    
+        setMonth(createdDate)
     }
     
     override func viewWillAppear(animated: Bool) {

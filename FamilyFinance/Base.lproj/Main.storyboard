@@ -313,6 +313,7 @@
                     <connections>
                         <outlet property="categoryLabel" destination="cmf-pC-X5v" id="0Z7-9b-Nxc"/>
                         <outlet property="categoryView" destination="dbe-l4-937" id="YuZ-MO-YMg"/>
+                        <outlet property="monthLabel" destination="Wqk-XN-SoC" id="XOh-oc-8CM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qMz-7o-Rif" userLabel="First Responder" sceneMemberID="firstResponder"/>
