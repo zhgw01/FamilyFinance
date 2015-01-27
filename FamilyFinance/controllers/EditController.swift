@@ -86,22 +86,17 @@ class EditController: UIViewController
    
     @IBAction func onSave(sender: UIButton) {
         
-        let category = Category()
-        category.name = "traffic"
-        category.image = "car.png"
-        category.type = 0
+        let category = categories[selectedCategory] as Category
         
-        let income = Cash()
-        income.number = 100
-        income.title = "car"
-        income.content = "go to company"
-        income.category = category
-        
-        let db = RLMRealm.defaultRealm()
-        db.beginWriteTransaction()
-        //db.addObject(category)
-        db.addObject(income)
-        db.commitWriteTransaction()
+        let newCash = Cash()
+        newCash.title = category.name
+        newCash.content = cashDescription
+        newCash.number = cashNumber
+        newCash.category = category
+        newCash.type = categoryType.rawValue
+        newCash.created = createdDate
+
+        dbManager.addCash(newCash)
         
     }
     

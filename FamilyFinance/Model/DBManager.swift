@@ -33,6 +33,12 @@ class DbManager: NSObject {
         return categories
     }
     
+    func addCash(cash: Cash) {
+        db.beginWriteTransaction()
+        db.addObject(cash)
+        db.commitWriteTransaction()
+    }
+    
     private func addDefaultCategory() {
         
         let defaultCategories = [
