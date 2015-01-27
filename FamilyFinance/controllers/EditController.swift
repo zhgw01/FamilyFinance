@@ -87,6 +87,15 @@ class EditController: UIViewController
    
     @IBAction func onSave(sender: UIButton) {
         
+        if (cashNumber <= 0) {
+            let alertView = UIAlertController(title: "请输入金额", message: "金额不能小于零", preferredStyle: .Alert)
+            alertView.view.backgroundColor = UIColor.blackColor()
+            alertView.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            presentViewController(alertView, animated: true, completion: nil)
+            return
+        }
+        
+        
         let category = categories[selectedCategory] as Category
         
         let newCash = Cash()
