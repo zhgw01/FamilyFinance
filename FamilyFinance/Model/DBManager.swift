@@ -33,6 +33,7 @@ class DbManager: NSObject {
         return categories
     }
     
+    
     func addCash(cash: Cash) {
         db.beginWriteTransaction()
         db.addObject(cash)
@@ -52,6 +53,13 @@ class DbManager: NSObject {
             "其它": "label"
         ]
         
+        let defaultIncomeCategories = [
+            "工资": "salary",
+            "奖金": "bonus",
+            "投资": "stock",
+            "其它": "other"
+        ]
+        
         db.beginWriteTransaction()
         
         for (name, icon) in defaultCategories {
@@ -59,9 +67,19 @@ class DbManager: NSObject {
             
             newCategory.name = name
             newCategory.image = icon
+            newCategory.type = 0
             
             db.addObject(newCategory)
+        }
+        
+        for (name, icon) in defaultIncomeCategories {
+            let newCategory = Category()
             
+            newCategory.name = name
+            newCategory.image = icon
+            newCategory.type = 1
+            
+            db.addObject(newCategory)
         }
         
         db.commitWriteTransaction()

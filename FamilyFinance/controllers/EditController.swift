@@ -58,7 +58,7 @@ class EditController: UIViewController
         
         println(RLMRealm.defaultRealm().path)
         
-        categories = dbManager.populateCategories()
+        categories = dbManager.populateCategories().objectsWhere("type=%d", categoryType.rawValue)
         selectedCategory = 0
         
     
@@ -77,10 +77,11 @@ class EditController: UIViewController
 
     
     @IBAction func onCategoryTypeChange(sender: UISegmentedControl) {
-       //reload the categories and set selected Index to 0
         
         categoryType = CategoryType(rawValue:sender.selectedSegmentIndex)!
-        NSLog("category type: %d", categoryType.rawValue)
+        categories = dbManager.populateCategories().objectsWhere("type=%d", categoryType.rawValue)
+        selectedCategory = 0
+        categoryView.reloadData()
         
     }
    
