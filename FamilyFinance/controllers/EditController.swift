@@ -98,11 +98,13 @@ class EditController: UIViewController
 
         dbManager.addCash(newCash)
         
+        self.navigationController?.popViewControllerAnimated(true)
+        
     }
     
     @IBAction func onCancel(sender: UIButton) {
         
-        NSLog("Cancel")
+        self.navigationController?.popViewControllerAnimated(true)
     }
 }
 
