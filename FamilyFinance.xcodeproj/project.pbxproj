@@ -32,6 +32,7 @@
 		9B6634881A77D04D00BB176B /* salary.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B6634851A77D04D00BB176B /* salary.png */; };
 		9B6634891A77D04D00BB176B /* stock.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B6634861A77D04D00BB176B /* stock.png */; };
 		9B75DE161A5D608C00B33E2C /* cloth.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B75DE151A5D608C00B33E2C /* cloth.png */; };
+		9B7DA6291A79265500AA745B /* ReportsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7DA6281A79265500AA745B /* ReportsController.swift */; };
 		9B914AF41A407C9400813E6A /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B914AF31A407C9400813E6A /* CurrencyTextField.swift */; };
 		9BA011A11A6E904E005F6567 /* Cash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA011A01A6E904E005F6567 /* Cash.swift */; };
 		9BA011A31A6E9171005F6567 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA011A21A6E9171005F6567 /* RLMSupport.swift */; };
@@ -122,6 +123,7 @@
 		9B6634851A77D04D00BB176B /* salary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = salary.png; sourceTree = "<group>"; };
 		9B6634861A77D04D00BB176B /* stock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stock.png; sourceTree = "<group>"; };
 		9B75DE151A5D608C00B33E2C /* cloth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloth.png; sourceTree = "<group>"; };
+		9B7DA6281A79265500AA745B /* ReportsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReportsController.swift; path = controllers/ReportsController.swift; sourceTree = "<group>"; };
 		9B914AF31A407C9400813E6A /* CurrencyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
 		9BA011A01A6E904E005F6567 /* Cash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cash.swift; path = Model/Cash.swift; sourceTree = "<group>"; };
 		9BA011A21A6E9171005F6567 /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				1105956419EC08EF00FF65EC /* AccountController.swift */,
 				1105956519EC08EF00FF65EC /* FinanceController.swift */,
 				9B069CBD1A3879E600C2E2E8 /* EditController.swift */,
+				9B7DA6281A79265500AA745B /* ReportsController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -585,6 +588,7 @@
 				9BA011A31A6E9171005F6567 /* RLMSupport.swift in Sources */,
 				1105956719EC08EF00FF65EC /* FinanceController.swift in Sources */,
 				9B2E9EFA1A6FE10F006375F6 /* DBManager.swift in Sources */,
+				9B7DA6291A79265500AA745B /* ReportsController.swift in Sources */,
 				1105956619EC08EF00FF65EC /* AccountController.swift in Sources */,
 				9BA011A11A6E904E005F6567 /* Cash.swift in Sources */,
 				9B39A5631A5AD64F00B0C182 /* CategoryCell.swift in Sources */,

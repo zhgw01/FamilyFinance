@@ -33,6 +33,9 @@ class DbManager: NSObject {
         return categories
     }
     
+    func getCashes() -> RLMResults {
+        return Cash.allObjects()
+    }
     
     func addCash(cash: Cash) {
         db.beginWriteTransaction()

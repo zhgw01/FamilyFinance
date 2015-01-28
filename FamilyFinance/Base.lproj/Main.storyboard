@@ -120,6 +120,33 @@
             </objects>
             <point key="canvasLocation" x="930.5" y="-293.5"/>
         </scene>
+        <!--明细-->
+        <scene sceneID="13c-Rs-hup">
+            <objects>
+                <tableViewController id="OyW-S7-3xP" customClass="ReportsController" customModule="FamilyFinance" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="yv7-o1-VIO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReportCellIdentifier" id="WBE-Nz-cOP">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WBE-Nz-cOP" id="p1Y-fD-IEP">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="OyW-S7-3xP" id="DzW-O4-ZaK"/>
+                            <outlet property="delegate" destination="OyW-S7-3xP" id="eSb-Jc-Nxm"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="明细" image="Report" id="TcF-Xc-5JI"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1SX-4f-zJG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="62" y="712"/>
+        </scene>
         <!--理财-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
@@ -159,6 +186,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="sPd-We-1E4" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="OyW-S7-3xP" kind="relationship" relationship="viewControllers" id="vIa-kF-XeR"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                     </connections>
                 </tabBarController>
@@ -345,7 +373,8 @@
         <image name="Account" width="30" height="30"/>
         <image name="Calendar" width="64" height="64"/>
         <image name="Edit" width="256" height="256"/>
-        <image name="Finance" width="30" height="30"/>
+        <image name="Finance" width="32" height="32"/>
+        <image name="Report" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
