@@ -11,10 +11,23 @@ import UIKit
 class AccountController: UIViewController{
 
     
-    @IBOutlet weak var barGraph: GKBarGraph!
+    @IBOutlet weak var barGraph: GKBarGraph!    
+    @IBOutlet weak var monthLabel: UILabel!
+    
+    private func setupDate() {
+        let formatter = NSDateFormatter()
+        
+        formatter.locale = NSLocale(localeIdentifier: "zh_CN")
+        formatter.dateFormat = "LLLL"
+        
+        monthLabel.text = formatter.stringFromDate(NSDate())
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         barGraph.backgroundColor = UIColor(patternImage: UIImage(named: "graphbg")!)
+        
+        setupDate()
     }
 
     override func viewWillAppear(animated: Bool) {
