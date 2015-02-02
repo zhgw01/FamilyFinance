@@ -44,6 +44,7 @@
 		9BBBD1351A22116400492C23 /* ChartKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBBD11E1A22116400492C23 /* ChartKit.framework */; };
 		9BBBD1361A22116400492C23 /* ChartKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBBD11E1A22116400492C23 /* ChartKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9BBBD13F1A22120D00492C23 /* CircleChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBBD13E1A22120D00492C23 /* CircleChart.swift */; };
+		9BF63E911A7FBADC002AEBEE /* ReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF63E901A7FBADC002AEBEE /* ReportCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +137,7 @@
 		9BBBD1301A22116400492C23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BBBD1311A22116400492C23 /* ChartKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartKitTests.swift; sourceTree = "<group>"; };
 		9BBBD13E1A22120D00492C23 /* CircleChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleChart.swift; sourceTree = "<group>"; };
+		9BF63E901A7FBADC002AEBEE /* ReportCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReportCell.swift; path = View/ReportCell.swift; sourceTree = "<group>"; };
 		D073662589B0D943E9E28E4F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				9B39A5621A5AD64F00B0C182 /* CategoryCell.swift */,
+				9BF63E901A7FBADC002AEBEE /* ReportCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				9B2E9EFA1A6FE10F006375F6 /* DBManager.swift in Sources */,
 				9B7DA6291A79265500AA745B /* ReportsController.swift in Sources */,
 				1105956619EC08EF00FF65EC /* AccountController.swift in Sources */,
+				9BF63E911A7FBADC002AEBEE /* ReportCell.swift in Sources */,
 				9BA011A11A6E904E005F6567 /* Cash.swift in Sources */,
 				9B39A5631A5AD64F00B0C182 /* CategoryCell.swift in Sources */,
 				9BA011A51A6E944A005F6567 /* Category.swift in Sources */,
