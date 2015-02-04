@@ -11,6 +11,14 @@ import UIKit
 class ReportsController: UITableViewController {
     
     lazy var cashes = Cash.allObjects()
+    private var sortedCategory: CashSortedType!{
+        didSet {
+            if (oldValue != sortedCategory) {
+                cashes = cashes.sortedResultsUsingProperty(sortedCategory.rawValue, ascending: false)
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     private let dateFormatter = NSDateFormatter()
     private let dayFormatter = NSDateFormatter()
@@ -33,8 +41,24 @@ class ReportsController: UITableViewController {
         dayFormatter.dateFormat = "dd"
         
         numberFormatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+        
+        sortedCategory = CashSortedType.Date
     }
     
+ 
+    @IBAction func onValueChange(sender: UISegmentedControl) {
+        switch(sender.selectedSegmentIndex) {
+            
+        case 1:
+            sortedCategory = CashSortedType.Number
+            break
+            
+        default:
+            sortedCategory = CashSortedType.Date
+            
+        }
+    }
+  
     //MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

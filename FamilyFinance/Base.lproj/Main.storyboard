@@ -140,11 +140,13 @@
                                         <constraint firstAttribute="height" constant="28" id="x0e-Hm-hBL"/>
                                     </constraints>
                                     <segments>
-                                        <segment title="月"/>
-                                        <segment title="年"/>
-                                        <segment title="类别"/>
+                                        <segment title="时间"/>
+                                        <segment title="金额"/>
                                     </segments>
                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="onValueChange:" destination="OyW-S7-3xP" eventType="valueChanged" id="cnf-pz-Klc"/>
+                                    </connections>
                                 </segmentedControl>
                             </subviews>
                             <color key="backgroundColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
