@@ -14,7 +14,9 @@ class ReportsController: UITableViewController {
     private var sortedCategory: CashSortedType!{
         didSet {
             if (oldValue != sortedCategory) {
-                cashes = cashes.sortedResultsUsingProperty(sortedCategory.rawValue, ascending: false)
+                let dateDescriptor = RLMSortDescriptor(property: CashSortedType.Date.rawValue, ascending: false)
+                let propertyDescriptor = RLMSortDescriptor(property: sortedCategory.rawValue, ascending: false)
+                cashes = cashes.sortedResultsUsingDescriptors([propertyDescriptor, dateDescriptor])
                 self.tableView.reloadData()
             }
         }
