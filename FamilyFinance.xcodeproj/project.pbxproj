@@ -28,6 +28,7 @@
 		9B39A5601A5ACDF900B0C182 /* shopping.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B39A5581A5ACDF900B0C182 /* shopping.png */; };
 		9B39A5611A5ACDF900B0C182 /* taxi.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B39A5591A5ACDF900B0C182 /* taxi.png */; };
 		9B39A5631A5AD64F00B0C182 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B39A5621A5AD64F00B0C182 /* CategoryCell.swift */; };
+		9B43989A1A88F12D002B7781 /* Finance.html in Resources */ = {isa = PBXBuildFile; fileRef = 9B4398991A88F12D002B7781 /* Finance.html */; };
 		9B6634871A77D04D00BB176B /* bonus.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B6634841A77D04D00BB176B /* bonus.png */; };
 		9B6634881A77D04D00BB176B /* salary.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B6634851A77D04D00BB176B /* salary.png */; };
 		9B6634891A77D04D00BB176B /* stock.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B6634861A77D04D00BB176B /* stock.png */; };
@@ -120,6 +121,7 @@
 		9B39A5581A5ACDF900B0C182 /* shopping.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shopping.png; sourceTree = "<group>"; };
 		9B39A5591A5ACDF900B0C182 /* taxi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taxi.png; sourceTree = "<group>"; };
 		9B39A5621A5AD64F00B0C182 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryCell.swift; path = View/CategoryCell.swift; sourceTree = "<group>"; };
+		9B4398991A88F12D002B7781 /* Finance.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = Finance.html; path = Html/Finance.html; sourceTree = "<group>"; };
 		9B6634841A77D04D00BB176B /* bonus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bonus.png; sourceTree = "<group>"; };
 		9B6634851A77D04D00BB176B /* salary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = salary.png; sourceTree = "<group>"; };
 		9B6634861A77D04D00BB176B /* stock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stock.png; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 		11C4C55E19E57B1100AE4243 /* FamilyFinance */ = {
 			isa = PBXGroup;
 			children = (
+				9B4398981A88F10D002B7781 /* Html */,
 				9B39A5501A5ACDF900B0C182 /* Resource */,
 				119C480319ED581C00374F6F /* View */,
 				1105956919EC095000FF65EC /* Business */,
@@ -315,6 +318,14 @@
 				9B39A5591A5ACDF900B0C182 /* taxi.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		9B4398981A88F10D002B7781 /* Html */ = {
+			isa = PBXGroup;
+			children = (
+				9B4398991A88F12D002B7781 /* Finance.html */,
+			);
+			name = Html;
 			sourceTree = "<group>";
 		};
 		9BBBD11F1A22116400492C23 /* ChartKit */ = {
@@ -511,6 +522,7 @@
 				11C4C56919E57B1100AE4243 /* Main.storyboard in Resources */,
 				9B39A55D1A5ACDF900B0C182 /* house.png in Resources */,
 				11C4C56E19E57B1200AE4243 /* LaunchScreen.xib in Resources */,
+				9B43989A1A88F12D002B7781 /* Finance.html in Resources */,
 				9B39A5601A5ACDF900B0C182 /* shopping.png in Resources */,
 				9B6634891A77D04D00BB176B /* stock.png in Resources */,
 				9B39A55F1A5ACDF900B0C182 /* medicine.png in Resources */,
