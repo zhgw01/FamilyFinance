@@ -15,7 +15,8 @@ class FinanceController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Finance.html", ofType: nil)!)
+        //let url = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Finance.html", ofType: nil)!)
+        let url = NSURL(string: "http://m.howbuy.com/fund/")
         let request = NSURLRequest(URL: url!)
         webView.loadRequest(request)
     }

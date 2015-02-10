@@ -2,9 +2,295 @@
 <html>
 <head>
 	<title>Finance Manager</title>
+	<meta charset="UTF-8">
+
+	<script type="text/javascript" src="http://static.howbuy.com/min/f=/js/wap/jquery/jquery-2.1.1.min.js"></script>
 </head>
 <body>
-
 <h1>Finance Manager</h1>
+
+ <div class="high-char" style="display:block;">
+					  	 	<!--  此处为highchar画图区域 -->
+					  	 	<div id="jzzsChartDiv" style="display:block;"></div>
+					  	 	
+                <ul class="highchar-tab cf">
+                  <li id="hbchart_1"><a href="javascript:loadJjhbChart(1);">7天</a></li>
+                  <li id="hbchart_2"><a href="javascript:loadJjhbChart(2);">1个月</a></li>
+                  <li id="hbchart_3" class="active"><a href="javascript:loadJjhbChart(3);">3个月</a></li>
+                  <li id="hbchart_4"><a href="javascript:loadJjhbChart(4);">1年</a></li>
+                  <li id="hbchart_5"><a href="javascript:loadJjhbChart(5);">最大</a></li>
+                </ul>
+</div>
+
+<script type="text/javascript" src="http://static.howbuy.com/min/f=/upload/auto/script/fund/jzzs_217020_v1937.js"></script>
+<script type="text/javascript" src="http://static.howbuy.com/min/f=/js/highcharts/highstock-1.3.9.js"></script>
+<script type="text/javascript">
+
+            $(function(){
+                loadJjhbChart(3);
+             });
+             
+            function setTabActive(_dateType){
+               $(".highchar-tab li" ).each(function( index ) {
+				  if(("hbchart_"+_dateType)==$( this ).attr("id")){
+				      $( this ).addClass("active");
+				   }else{
+				      $( this ).removeClass("active");
+				 } 
+				});
+             }
+            
+            /**
+			 * _dateType 用于比较的时间【1,7天;2,1个月;3,3个月;4,一年;5,最大】
+			 * _target 图表具体显示的位置
+			 */
+			function loadJjhbChart(_dateType){
+				if(_dateType == 0 || _dateType == '0' || _dateType == null || _dateType == '' || isNaN(_dateType)) {
+					_dateType = 3;
+				}
+                 
+                setTabActive(_dateType);
+				var options = {
+					chart : {
+						renderTo : 'jzzsChartDiv',
+						type:'line',
+						//width:420,
+						height:260,
+						marginLeft:0
+					},
+					navigator : {	/*查询搜索条*/
+						enabled: false,
+						 height: 20						
+					},
+
+					scrollbar: {
+						enabled: false
+					},
+
+					rangeSelector : {
+						enabled: false,
+						selected : 4
+					},
+					title : {
+						text : ''
+					},
+					colors: ['#3C5777', '#AA604C', '#919191'],
+					legend: {
+	                    enabled: true,                    
+	                    layout: 'horizontal',
+	                    //itemWidth: 80,
+	                    backgroundColor: '#FFFFFF',	                    
+	                    align: 'center',
+	                    borderColor:'' ,
+	                    borderWidth: 0,
+	                    padding:0,	                    
+	                    //itemMarginBottom: -10 
+			            itemMarginTop: 20,
+			            y: -15                  
+                    },
+					tooltip: {
+						formatter: function() {
+							var s = '<b>'+ Highcharts.dateFormat('%Y-%m-%d', this.x) +'</b><br/>';
+							var __jzrq = Highcharts.dateFormat('%Y%m%d', this.x);
+							var __jjzz = '';
+							if(navArrStr && navArrStr != '') {
+								var __idx = navArrStr.indexOf(__jzrq+":");
+								if(__idx >= 0) {
+									var __tstr = navArrStr.substring(__idx + __jzrq.length + 1);
+									__jjzz = __tstr.substring(0,__tstr.indexOf("|"));
+								}
+							}
+							var __nJz = '';
+							if(__jjzz != '') {
+								__nJz = Highcharts.numberFormat(parseFloat(__jjzz),4) + '';
+							}
+							s += '<span style="color:black">基金净值</span>: <b>'+__nJz+'</b><br/>';
+							$.each(this.points, function(i, point) {
+								s += '<span style="color:'+this.series.color+'">'+this.series.name+'</span>: <b>'+Highcharts.numberFormat(point.y,2)+'%</b><br/>';
+							});
+							return s;
+						}
+					},
+					xAxis: {
+						type: 'datetime',
+						dateTimeLabelFormats: {
+						    millisecond: '%m-%d',
+							second: '%m-%d',
+							minute: '%m-%d',
+							hour: '%m-%d',
+							day: '%d',
+							week: '%y-%m-%d',
+							month: '%Y-%m',
+							year: '%Y'
+						}
+					},
+					yAxis : {
+						title : {
+							text : ''
+						},
+						labels: {							
+							formatter: function() {
+								return this.value + '%';
+							}
+						}
+					},
+					plotOptions:{
+						line:{
+							dataGrouping: {
+								enabled: false,
+								dateTimeLabelFormats: {
+									millisecond: ['%Y-%m-%d', '%Y-%m-%d', ''],
+								    second: ['%Y-%m-%d', '%Y-%m-%d', ''],
+								    minute: ['%Y-%m-%d', '%Y-%m-%d', ''],
+								    hour: ['%Y-%m-%d', '%Y-%m-%d', ''],
+									day: ['%Y-%m-%d', '%Y-%m-%d', ''],
+									week: ['%Y-%m-%d', '%Y-%m-%d', ''],
+									month: ['%Y-%m', '%Y-%m', ''],
+									year: ['%Y', '%Y', '-%Y']
+								}
+
+							},
+							cursor:'pointer',
+							shadow:false,
+							states: {	/*状态*/
+								hover: {	/*(鼠标)悬浮状态*/
+									lineWidth: 1	/*曲线宽*/
+								}
+							}
+						}
+					},
+					credits: {	/*版权图标显示*/
+						enabled: false,
+						text: '',
+						href: 'http://www.howbuy.com'
+						
+					},
+					series : [{
+						name : '',
+						data : []
+					},
+					{
+						name : '',
+						data : []
+					},
+					{
+						name : '',
+						data : []
+					}]
+				};
+
+				if(JzzsDateObj.cats.length == 3) {
+					options.series[0].name = JzzsDateObj.cats[0];
+					options.series[1].name = JzzsDateObj.cats[1];
+					options.series[2].name = JzzsDateObj.cats[2];
+				}
+				else {
+					options.series[0].name = "净值回报";
+					options.series[1].name = "沪深300";
+					options.series[2].name = "同类回报";
+				}
+
+				options.series[0].name = "净值回报";
+					options.series[1].name = "沪深300";
+					options.series[2].name = "同类回报";
+
+				var data0 = [],	/*净值回报*/
+					data1 = [],	/*沪深300*/
+					data2 = [];	/*同类回报*/
+				var navArrStr = '';		/*净值组字符串*/
+				if(_dateType == 1) {	/*7天*/
+					jQuery.each(JzzsDateObj.navStrListTenDay, function(i, line) {
+						var items = line.split(/\,/g);
+						if(items.length >= 4) {
+							var _time = Date.UTC(parseInt(items[0]),parseInt(items[1]),parseInt(items[2]));
+							data0.push([_time,parseFloat(items[3])]);
+							data1.push([_time,parseFloat(items[4])]);
+							data2.push([_time,parseFloat(items[5])]);
+							if(navArrStr == '') {
+								navArrStr = Highcharts.dateFormat('%Y%m%d', _time) + ":" + items[6]+"|";
+							}
+							else {
+								navArrStr += Highcharts.dateFormat('%Y%m%d', _time) + ":" + items[6] + "|";
+							}
+						}
+					});
+				}
+				else if(_dateType == 2) {	/*1个月*/
+					jQuery.each(JzzsDateObj.navStrListOneMonth, function(i, line) {
+						var items = line.split(/\,/g);
+						if(items.length >= 4) {
+							var _time = Date.UTC(parseInt(items[0]),parseInt(items[1]),parseInt(items[2]));
+							data0.push([_time,parseFloat(items[3])]);
+							data1.push([_time,parseFloat(items[4])]);
+							data2.push([_time,parseFloat(items[5])]);
+							if(navArrStr == '') {
+								navArrStr = Highcharts.dateFormat('%Y%m%d', _time) + ":" + items[6]+"|";
+							}
+							else {
+								navArrStr += Highcharts.dateFormat('%Y%m%d', _time) + ":" + items[6] + "|";
+							}
+						}
+					});
+				}
+				else if(_dateType == 3) {	/*3个月*/
+					jQuery.each(JzzsDateObj.navStrListThreeMonth, function(i, line) {
+						var items = line.split(/\,/g);
+						if(items.length >= 4) {
+							var _time = Date.UTC(parseInt(items[0]),parseInt(items[1]),parseInt(items[2]));
+							data0.push([_time,parseFloat(items[3])]);
+							data1.push([_time,parseFloat(items[4])]);
+							data2.push([_time,parseFloat(items[5])]);
+							if(navArrStr == '') {
+								navArrStr = Highcharts.dateFormat('%Y%m%d', _time) + ":" + items[6]+"|";
+							}
+							else {
+								navArrStr += Highcharts.dateFormat('%Y%m%d', _time) + ":" + items[6] + "|";
+							}
+						}
+					});
+				}
+				else if(_dateType == 4) {	/*1年*/
+					jQuery.each(JzzsDateObj.navStrListOneYear, function(i, line) {
+						var items = line.split(/\,/g);
+						if(items.length >= 4) {
+							var _time = Date.UTC(parseInt(items[0]),parseInt(items[1]),parseInt(items[2]));
+							data0.push([_time,parseFloat(items[3])]);
+							data1.push([_time,parseFloat(items[4])]);
+							data2.push([_time,parseFloat(items[5])]);
+							if(navArrStr == '') {
+								navArrStr = Highcharts.dateFormat('%Y%m%d', _time) + ":" + items[6]+"|";
+							}
+							else {
+								navArrStr += Highcharts.dateFormat('%Y%m%d', _time) + ":" + items[6] + "|";
+							}
+						}
+					});
+				}
+				else if(_dateType == 5) {	/*最大范围*/
+					jQuery.each(JzzsDateObj.navList, function(i, line) {
+						var items = line.split(/\,/g);
+						if(items.length >= 4) {
+							var _time = Date.UTC(parseInt(items[0]),parseInt(items[1]),parseInt(items[2]));
+							data0.push([_time,parseFloat(items[3])]);
+							data1.push([_time,parseFloat(items[4])]);
+							data2.push([_time,parseFloat(items[5])]);
+							if(navArrStr == '') {
+								navArrStr = Highcharts.dateFormat('%Y%m%d', _time) + ":" + items[6]+"|";
+							}
+							else {
+								navArrStr += Highcharts.dateFormat('%Y%m%d', _time) + ":" + items[6] + "|";
+							}
+						}
+					});
+				}
+
+				options.series[0].data = data0;
+				options.series[1].data = data1;
+				options.series[2].data = data2;
+
+				var chart = new Highcharts.StockChart(options);
+
+			};
+ </script>         
 </body>
 </html>
