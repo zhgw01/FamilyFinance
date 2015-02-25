@@ -18,6 +18,13 @@
 #define COCOAPODS_VERSION_MINOR_GraphKit 1
 #define COCOAPODS_VERSION_PATCH_GraphKit 1
 
+// IQKeyboardManager
+#define COCOAPODS_POD_AVAILABLE_IQKeyboardManager
+// This library does not follow semantic-versioning,
+// so we were not able to define version macros.
+// Please contact the author.
+// Version: 3.2.1.0.
+
 // MKFoundationKit/NSArray
 #define COCOAPODS_POD_AVAILABLE_MKFoundationKit_NSArray
 #define COCOAPODS_VERSION_MAJOR_MKFoundationKit_NSArray 1
