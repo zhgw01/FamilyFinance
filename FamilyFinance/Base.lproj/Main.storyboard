@@ -185,8 +185,8 @@
                                         <constraint firstAttribute="height" constant="28" id="x0e-Hm-hBL"/>
                                     </constraints>
                                     <segments>
-                                        <segment title="时间"/>
-                                        <segment title="金额"/>
+                                        <segment title="收入"/>
+                                        <segment title="支出"/>
                                     </segments>
                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     <connections>
@@ -201,7 +201,7 @@
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="XKa-b7-mr9">
-                            <rect key="frame" x="0.0" y="170" width="320" height="349"/>
+                            <rect key="frame" x="0.0" y="170" width="320" height="900"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                         </view>

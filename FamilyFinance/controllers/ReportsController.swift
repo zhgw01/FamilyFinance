@@ -10,7 +10,7 @@ import UIKit
 
 class ReportsController: UITableViewController {
     
-    lazy var cashes = Cash.allObjects()
+    var cashes: RLMResults!
     private var sortedCategory: CashSortedType!{
         didSet {
             if (oldValue != sortedCategory) {
@@ -44,21 +44,19 @@ class ReportsController: UITableViewController {
         
         numberFormatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
         
-        sortedCategory = CashSortedType.Date
+        //sortedCategory = CashSortedType.Date
+        let predicate = NSPredicate(format: "type=%d",0)
+        cashes = Cash.objectsWithPredicate(predicate)
+        
     }
     
  
     @IBAction func onValueChange(sender: UISegmentedControl) {
-        switch(sender.selectedSegmentIndex) {
-            
-        case 1:
-            sortedCategory = CashSortedType.Number
-            break
-            
-        default:
-            sortedCategory = CashSortedType.Date
-            
-        }
+        
+        let predicate = NSPredicate(format: "type=%d",sender.selectedSegmentIndex)
+        cashes = Cash.objectsWithPredicate(predicate)
+        
+        self.tableView.reloadData()
     }
   
     //MARK: - Table view data source
