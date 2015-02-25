@@ -48,15 +48,8 @@ class EditController: UIViewController
         super.viewDidLoad()
         categoryView.backgroundColor = UIColor(patternImage: UIImage(named: "graphbg")!)
         
-        if let flowLayout = categoryView.collectionViewLayout as? UICollectionViewFlowLayout {
-            var top = (categoryView.frame.height - flowLayout.itemSize.height * 2 - flowLayout.minimumInteritemSpacing) / 2.0
-            if (top < 0  ) {
-                top = 0
-            }
-            flowLayout.sectionInset = UIEdgeInsets(top: top, left: 0, bottom: top, right: 0)
-        }
         
-        println(RLMRealm.defaultRealm().path)
+        //println(RLMRealm.defaultRealm().path)
         
         categories = dbManager.populateCategories().objectsWhere("type=%d", categoryType.rawValue)
         selectedCategory = 0
@@ -144,6 +137,20 @@ extension EditController: UICollectionViewDelegateFlowLayout
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         selectedCategory = UInt(indexPath.row)
 
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        
+        
+        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            var top = (collectionView.frame.height - flowLayout.itemSize.height * 2 - flowLayout.minimumInteritemSpacing) / 2.0
+            if (top < 0  ) {
+                top = 0
+            }
+            return UIEdgeInsets(top: top, left: 0, bottom: top, right: 0)
+        }
+
+        return UIEdgeInsetsZero
     }
     
 }
