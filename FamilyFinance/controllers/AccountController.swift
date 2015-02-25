@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import ChartKit
 
 class AccountController: UIViewController{
 
     
     @IBOutlet weak var barGraph: GKBarGraph!    
     @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var ratioChart: CircleChart!
+    @IBOutlet weak var incomeLabel: LineLabel!
+    @IBOutlet weak var expenseLabel: LineLabel!
     
     private func setupDate() {
         let formatter = NSDateFormatter()
@@ -23,11 +27,23 @@ class AccountController: UIViewController{
         monthLabel.text = formatter.stringFromDate(NSDate())
     }
     
+    private func setStat() {
+        if currentMonthIncome != 0 {
+            ratioChart.percent = CGFloat(currentMonthExpense / currentMonthIncome);
+        } else {
+            ratioChart.percent = CGFloat(currentMonthExpense)
+        }
+        
+        incomeLabel.number = Int(currentMonthIncome)
+        expenseLabel.number = Int(currentMonthExpense)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         barGraph.backgroundColor = UIColor(patternImage: UIImage(named: "graphbg")!)
         
         setupDate()
+        setStat()
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -54,7 +70,22 @@ class AccountController: UIViewController{
         
     }
     
-    var data = [60.0, 160.0, 126.4, 262.2, 186.2, 100, 70, 0, 0, 0, 0, 0]
+    var currentMonthExpense: Double {
+        let expense = DbManager.sharedInstance.getMonthlyExpense()
+        let index = DateUtil.getCurrentMonth()
+        return expense[index]
+    }
+    
+    var currentMonthIncome: Double {
+        let income = DbManager.sharedInstance.getMonthlyIncome()
+        let index = DateUtil.getCurrentMonth()
+        return income[index]
+    }
+    
+    var data: [Double] {
+        return DbManager.sharedInstance.getMonthlyExpense()
+    }
+    
     var labels = ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月","十月","十一", "十二"]
     
 }

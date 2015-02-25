@@ -10,7 +10,7 @@ import UIKit
 
 
 @IBDesignable
-class CircleChart: UIView {
+public class CircleChart: UIView {
     
     enum ChartType {
         case Percent
@@ -23,13 +23,13 @@ class CircleChart: UIView {
     var backgroundRingLayer: CAShapeLayer!
     var ringLayer: CAShapeLayer!
     
-    @IBInspectable var lineWidth:CGFloat = 10.0 {
+    @IBInspectable public var lineWidth:CGFloat = 10.0 {
         didSet {
             updateLayerProperties()
         }
     }
-    @IBInspectable var strokeColor: UIColor = UIColor.PNFreshGreen
-    @IBInspectable var percent: CGFloat = 0.6 {
+    @IBInspectable public var strokeColor: UIColor = UIColor.PNFreshGreen
+    @IBInspectable public var percent: CGFloat = 0.6 {
         didSet {
             updateLayerProperties()
         }
@@ -39,7 +39,7 @@ class CircleChart: UIView {
     var chartType: ChartType = .Percent
     
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         
         if countingLabel == nil {
@@ -113,7 +113,7 @@ class CircleChart: UIView {
         
         if (countingLabel != nil) {
             countingLabel.text = "0%"
-            countingLabel.count(from: 0, to: Float(percent), duration: 1.0)
+            countingLabel.count(from: 0, to: Float(percent * 100), duration: 1.0)
         }
     }
     

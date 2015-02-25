@@ -155,7 +155,10 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="barGraph" destination="cc6-eC-7kf" id="lsM-Ah-abO"/>
+                        <outlet property="expenseLabel" destination="Cbd-Zj-aoe" id="VHx-bp-ARp"/>
+                        <outlet property="incomeLabel" destination="XcY-xO-ib4" id="rNm-iW-ZmQ"/>
                         <outlet property="monthLabel" destination="aDs-Rf-cB1" id="kz2-1b-Xnn"/>
+                        <outlet property="ratioChart" destination="eMk-Ry-Vvh" id="cwD-iG-Orw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>

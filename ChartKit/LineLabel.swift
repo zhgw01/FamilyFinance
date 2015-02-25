@@ -9,10 +9,10 @@
 import UIKit
 
 @IBDesignable
-class LineLabel: UIView {
+public class LineLabel: UIView {
     
     var numberLabel: UILabel = UILabel()
-    @IBInspectable var number: Int = 0 {
+    @IBInspectable public var number: Int = 0 {
         didSet {
             let format = NSNumberFormatter()
             format.usesGroupingSeparator = true
@@ -22,12 +22,12 @@ class LineLabel: UIView {
             numberLabel.text = format.stringFromNumber(number)
         }
     }
-    @IBInspectable var numberLabelFontSize: CGFloat = 20 {
+    @IBInspectable public var numberLabelFontSize: CGFloat = 20 {
         didSet {
             numberLabel.font = UIFont.systemFontOfSize(numberLabelFontSize)
         }
     }
-    @IBInspectable var numberLabelFontColor: UIColor = UIColor.whiteColor() {
+    @IBInspectable public var numberLabelFontColor: UIColor = UIColor.whiteColor() {
         didSet {
             numberLabel.textColor = numberLabelFontColor
         }
@@ -64,7 +64,7 @@ class LineLabel: UIView {
         }
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
@@ -93,7 +93,7 @@ class LineLabel: UIView {
         
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         
         if upperLine == nil {

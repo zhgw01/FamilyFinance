@@ -20,6 +20,9 @@ class DbManager: NSObject {
     }
     
     let db = RLMRealm.defaultRealm()
+    private var income = [Double](count: 12, repeatedValue: 0.0)
+    private var expense = [Double](count: 12, repeatedValue: 0.0)
+    private var needReload = true
     
     
     func populateCategories() -> RLMResults {
@@ -33,6 +36,46 @@ class DbManager: NSObject {
         return categories
     }
     
+    
+    private func accumulateCash(cash: Cash) {
+        let index = DateUtil.getMonth(cash.created)
+        if index >= 0 && index < 12 {
+            if cash.type == CategoryType.Income.rawValue {
+                income[index] += cash.number
+            } else {
+                expense[index] += cash.number
+            }
+            
+        }
+    }
+    
+    private func initilizeMonthlyData() {
+        income = [Double](count: 12, repeatedValue: 0.0)
+        expense = [Double](count: 12, repeatedValue: 0.0)
+        
+        for object in Cash.allObjects() {
+            let cash = object as Cash
+            accumulateCash(cash)
+         }
+        
+    }
+    
+    func getMonthlyExpense() -> [Double] {
+        if needReload {
+            initilizeMonthlyData()
+        }
+        
+        return income
+    }
+    
+    func getMonthlyIncome() -> [Double] {
+        if needReload {
+            initilizeMonthlyData()
+        }
+        
+        return expense
+    }
+    
     func getCashes() -> RLMResults {
         return Cash.allObjects()
     }
@@ -41,6 +84,8 @@ class DbManager: NSObject {
         db.beginWriteTransaction()
         db.addObject(cash)
         db.commitWriteTransaction()
+        
+        accumulateCash(cash)
     }
     
     private func addDefaultCategory() {
