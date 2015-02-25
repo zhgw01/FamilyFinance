@@ -37,7 +37,12 @@ class AccountController: UIViewController{
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        //setup bar width
+        
+        //setup bar graph
+        if (UIScreen.mainScreen().bounds.height <= 480.0) {
+            barGraph.barHeight = 100.0;
+        }
+        
         let width = barGraph.bounds.size.width;
         let count = barGraph.dataSource!.numberOfBars()
         let barSpace = width / CGFloat(count);
