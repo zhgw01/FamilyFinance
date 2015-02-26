@@ -66,7 +66,7 @@ class DbManager: NSObject {
             initilizeMonthlyData()
         }
         
-        return income
+        return expense
     }
     
     func getMonthlyIncome() -> [Double] {
@@ -74,7 +74,7 @@ class DbManager: NSObject {
             initilizeMonthlyData()
         }
         
-        return expense
+        return income
     }
     
     func getCashes() -> RLMResults {
