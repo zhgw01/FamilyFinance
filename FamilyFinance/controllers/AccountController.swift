@@ -38,12 +38,22 @@ class AccountController: UIViewController{
         expenseLabel.number = Int(currentMonthExpense)
     }
     
+    func onMonthlyDataChange() {
+        setStat()
+        barGraph.draw()
+    }
+    
+    private func setupNotification() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onMonthlyDataChange", name: monthlyStatNotificationKey, object: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         barGraph.backgroundColor = UIColor(patternImage: UIImage(named: "graphbg")!)
         
         setupDate()
         setStat()
+        setupNotification()
     }
 
     override func viewWillAppear(animated: Bool) {

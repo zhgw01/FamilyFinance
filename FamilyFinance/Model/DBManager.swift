@@ -8,6 +8,7 @@
 
 import Foundation
 
+let monthlyStatNotificationKey = "com.gongwei.monthlyStatNotificationKey"
 
 class DbManager: NSObject {
     
@@ -86,6 +87,7 @@ class DbManager: NSObject {
         db.commitWriteTransaction()
         
         accumulateCash(cash)
+        NSNotificationCenter.defaultCenter().postNotificationName(monthlyStatNotificationKey, object: self)
     }
     
     private func addDefaultCategory() {
