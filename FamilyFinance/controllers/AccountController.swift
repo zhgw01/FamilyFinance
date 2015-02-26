@@ -18,6 +18,10 @@ class AccountController: UIViewController{
     @IBOutlet weak var incomeLabel: LineLabel!
     @IBOutlet weak var expenseLabel: LineLabel!
     
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
     private func setupDate() {
         let formatter = NSDateFormatter()
         
