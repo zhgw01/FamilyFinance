@@ -141,6 +141,8 @@
 		9BBBD1301A22116400492C23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BBBD1311A22116400492C23 /* ChartKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartKitTests.swift; sourceTree = "<group>"; };
 		9BBBD13E1A22120D00492C23 /* CircleChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleChart.swift; sourceTree = "<group>"; };
+		9BDE09F61AA22B7B003356F8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		9BDE09F71AA22B7B003356F8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		9BF63E901A7FBADC002AEBEE /* ReportCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReportCell.swift; path = View/ReportCell.swift; sourceTree = "<group>"; };
 		D073662589B0D943E9E28E4F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -666,6 +668,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				11C4C56819E57B1100AE4243 /* Base */,
+				9BDE09F61AA22B7B003356F8 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -674,6 +677,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				11C4C56D19E57B1200AE4243 /* Base */,
+				9BDE09F71AA22B7B003356F8 /* zh-Hans */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";

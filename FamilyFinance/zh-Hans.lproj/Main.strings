@@ -1,0 +1,63 @@
+
+/* Class = "IBUISegmentedControl"; 0Qk-nw-sJo.segmentTitles[0] = "支出"; ObjectID = "0Qk-nw-sJo"; */
+"0Qk-nw-sJo.segmentTitles[0]" = "支出";
+
+/* Class = "IBUISegmentedControl"; 0Qk-nw-sJo.segmentTitles[1] = "收入"; ObjectID = "0Qk-nw-sJo"; */
+"0Qk-nw-sJo.segmentTitles[1]" = "收入";
+
+/* Class = "IBUILabel"; text = "02"; ObjectID = "Adg-cY-uy8"; */
+"Adg-cY-uy8.text" = "02";
+
+/* Class = "IBUILabel"; text = "1月"; ObjectID = "H0P-t8-2nr"; */
+"H0P-t8-2nr.text" = "1月";
+
+/* Class = "IBUIButton"; normalTitle = "保存"; ObjectID = "IMs-87-UKv"; */
+"IMs-87-UKv.normalTitle" = "保存";
+
+/* Class = "IBUIButton"; normalTitle = "取消"; ObjectID = "Koa-vw-qWG"; */
+"Koa-vw-qWG.normalTitle" = "取消";
+
+/* Class = "IBUIViewController"; title = "记录"; ObjectID = "PTy-3X-rVk"; */
+"PTy-3X-rVk.title" = "记录";
+
+/* Class = "IBUITabBarItem"; title = "流水"; ObjectID = "TcF-Xc-5JI"; */
+"TcF-Xc-5JI.title" = "流水";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "U9a-YF-5p1"; */
+"U9a-YF-5p1.text" = "Label";
+
+/* Class = "IBUITextField"; text = "0"; ObjectID = "Uqm-vB-lxS"; */
+"Uqm-vB-lxS.text" = "0";
+
+/* Class = "IBUILabel"; text = "九月"; ObjectID = "Wqk-XN-SoC"; */
+"Wqk-XN-SoC.text" = "九月";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "XLU-LH-UxS"; */
+"XLU-LH-UxS.text" = "Label";
+
+/* Class = "IBUILabel"; text = "十二月"; ObjectID = "aDs-Rf-cB1"; */
+"aDs-Rf-cB1.text" = "十二月";
+
+/* Class = "IBUITabBarItem"; title = "记账"; ObjectID = "acW-dT-cKf"; */
+"acW-dT-cKf.title" = "记账";
+
+/* Class = "IBUITabBarItem"; title = "理财"; ObjectID = "cPa-gy-q4n"; */
+"cPa-gy-q4n.title" = "理财";
+
+/* Class = "IBUIButton"; normalTitle = "记一笔"; ObjectID = "cQx-Eo-ysA"; */
+"cQx-Eo-ysA.normalTitle" = "记一笔";
+
+/* Class = "IBUILabel"; text = "旅行"; ObjectID = "cmf-pC-X5v"; */
+"cmf-pC-X5v.text" = "旅行";
+
+/* Class = "IBUISegmentedControl"; hIv-7c-2hE.segmentTitles[0] = "支出"; ObjectID = "hIv-7c-2hE"; */
+"hIv-7c-2hE.segmentTitles[0]" = "支出";
+
+/* Class = "IBUISegmentedControl"; hIv-7c-2hE.segmentTitles[1] = "收入"; ObjectID = "hIv-7c-2hE"; */
+"hIv-7c-2hE.segmentTitles[1]" = "收入";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "mJA-hH-kJi"; */
+"mJA-hH-kJi.text" = "Label";
+
+/* Class = "IBUITextView"; text = "Edit"; ObjectID = "vVx-dt-BrD"; */
+"vVx-dt-BrD.text" = "Edit";
