@@ -28,7 +28,7 @@
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
-		<string>metal</string>
+		<string>opengles-3</string>
 		<string>armv7</string>
 	</array>
 	<key>UIStatusBarTintParameters</key>
