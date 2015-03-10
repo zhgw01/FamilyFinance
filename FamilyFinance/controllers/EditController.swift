@@ -159,7 +159,9 @@ extension EditController: UITextFieldDelegate
 {
     func textFieldDidEndEditing(textField: UITextField) {
         if let currencyTextuField = textField as? CurrencyTextField {
-           cashNumber = currencyTextuField.number as Double
+            if let number = currencyTextuField.number as? Double {
+                cashNumber = number;
+            }
         }
     }
 }
