@@ -35,7 +35,7 @@ public class CurrencyTextField: UITextField {
     
     func setup()
     {
-        formatter.locale = NSLocale.currentLocale()
+        formatter.locale = NSLocale(localeIdentifier: "zh_CN")
         formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
         formatter.usesGroupingSeparator = true
         formatter.generatesDecimalNumbers = true

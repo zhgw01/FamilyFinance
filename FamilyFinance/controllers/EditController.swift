@@ -37,7 +37,7 @@ class EditController: UIViewController
     private func setMonth(date: NSDate) {
         let formatter = NSDateFormatter()
         
-        formatter.locale = NSLocale(localeIdentifier: "zh_CN")
+
         formatter.dateFormat = "LLLL"
         
         monthLabel.text = formatter.stringFromDate(date)
