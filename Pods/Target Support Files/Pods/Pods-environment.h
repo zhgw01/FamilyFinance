@@ -23,7 +23,7 @@
 // This library does not follow semantic-versioning,
 // so we were not able to define version macros.
 // Please contact the author.
-// Version: 3.2.1.0.
+// Version: 3.2.0.2.
 
 // MKFoundationKit/NSArray
 #define COCOAPODS_POD_AVAILABLE_MKFoundationKit_NSArray
@@ -34,12 +34,24 @@
 // Realm
 #define COCOAPODS_POD_AVAILABLE_Realm
 #define COCOAPODS_VERSION_MAJOR_Realm 0
-#define COCOAPODS_VERSION_MINOR_Realm 89
-#define COCOAPODS_VERSION_PATCH_Realm 2
+#define COCOAPODS_VERSION_MINOR_Realm 87
+#define COCOAPODS_VERSION_PATCH_Realm 4
 
 // Realm/Headers
 #define COCOAPODS_POD_AVAILABLE_Realm_Headers
 #define COCOAPODS_VERSION_MAJOR_Realm_Headers 0
-#define COCOAPODS_VERSION_MINOR_Realm_Headers 89
-#define COCOAPODS_VERSION_PATCH_Realm_Headers 2
+#define COCOAPODS_VERSION_MINOR_Realm_Headers 87
+#define COCOAPODS_VERSION_PATCH_Realm_Headers 4
+
+// TSCurrencyTextField
+#define COCOAPODS_POD_AVAILABLE_TSCurrencyTextField
+#define COCOAPODS_VERSION_MAJOR_TSCurrencyTextField 0
+#define COCOAPODS_VERSION_MINOR_TSCurrencyTextField 1
+#define COCOAPODS_VERSION_PATCH_TSCurrencyTextField 0
+
+// TSCurrencyTextField/Core
+#define COCOAPODS_POD_AVAILABLE_TSCurrencyTextField_Core
+#define COCOAPODS_VERSION_MAJOR_TSCurrencyTextField_Core 0
+#define COCOAPODS_VERSION_MINOR_TSCurrencyTextField_Core 1
+#define COCOAPODS_VERSION_PATCH_TSCurrencyTextField_Core 0
 

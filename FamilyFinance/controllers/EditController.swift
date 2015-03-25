@@ -158,10 +158,8 @@ extension EditController: UICollectionViewDelegateFlowLayout
 extension EditController: UITextFieldDelegate
 {
     func textFieldDidEndEditing(textField: UITextField) {
-        if let currencyTextuField = textField as? CurrencyTextField {
-            if let number = currencyTextuField.number as? Double {
-                cashNumber = number;
-            }
+        if let currencyTextuField = textField as? TSCurrencyTextField {
+            cashNumber = currencyTextuField.amount.doubleValue
         }
     }
 }
